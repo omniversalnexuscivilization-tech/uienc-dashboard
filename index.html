@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIENC 2.0 - Markless Growth Dashboard | ONSNC.org</title>
+    <meta name="description" content="Universal Indigenous Education & Network Commons - Markless Growth Tracking System">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/uienc-dashboard.css">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Loading Growth Dashboard...</p>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notificationToast" class="notification-toast hidden">
+        <i data-lucide="check-circle" class="notification-icon"></i>
+        <span id="notificationMessage"></span>
+    </div>
+
+    <!-- Main Container -->
+    <div id="mainApp" class="hidden">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-container">
+                <div class="header-left">
+                    <div class="learner-avatar" id="learnerAvatar">AR</div>
+                    <div class="learner-info">
+                        <h1 class="learner-name" id="learnerName">Aanya Ronghang</h1>
+                        <p class="learner-details" id="learnerDetails">Green Pod – Community Eco-Hub • April–June 2025</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-primary" id="exportPdfBtn">
+                        <i data-lucide="download"></i>
+                        Export PDF
+                    </button>
+                    <button class="btn btn-secondary" id="shareBtn">
+                        <i data-lucide="share-2"></i>
+                        Share
+                    </button>
+                    <button class="btn btn-icon" id="settingsBtn">
+                        <i data-lucide="settings"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <div class="nav-container">
+                <button class="nav-tab active" data-tab="overview">
+                    <i data-lucide="activity"></i>
+                    <span>Overview</span>
+                </button>
+                <button class="nav-tab" data-tab="growth">
+                    <i data-lucide="trending-up"></i>
+                    <span>Growth Map</span>
+                </button>
+                <button class="nav-tab" data-tab="projects">
+                    <i data-lucide="book-open"></i>
+                    <span>Portfolio</span>
+                </button>
+                <button class="nav-tab" data-tab="badges">
+                    <i data-lucide="award"></i>
+                    <span>Achievements</span>
+                </button>
+                <button class="nav-tab" data-tab="reflections">
+                    <i data-lucide="heart"></i>
+                    <span>Reflections</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                
+                <!-- Overview Tab -->
+                <section id="overviewTab" class="tab-content active">
+                    <!-- Key Metrics -->
+                    <div class="metrics-grid">
+                        <div class="metric-card metric-purple">
+                            <div class="metric-content">
+                                <div class="metric-info">
+                                    <p class="metric-label">Contribution Score</p>
+                                    <p class="metric-value" id="contributionScore">87/100</p>
+                                </div>
+                                <i data-lucide="award" class="metric-icon"></i>
+                            </div>
+                            <div class="metric-trend">
+                                <i data-lucide="trending-up"></i>
+                                <span>+12 this month</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card metric-blue">
+                            <div class="metric-content">
+                                <div class="metric-info">
+                                    <p class="metric-label">Learning Hours</p>
+                                    <p class="metric-value" id="learningHours">487</p>
+                                </div>
+                                <i data-lucide="book-open" class="metric-icon"></i>
+                            </div>
+                            <div class="metric-footer">
+                                <span>This quarter</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card metric-green">
+                            <div class="metric-content">
+                                <div class="metric-info">
+                                    <p class="metric-label">Completion Rate</p>
+                                    <p class="metric-value" id="completionRate">92%</p>
+                                </div>
+                                <i data-lucide="activity" class="metric-icon"></i>
+                            </div>
+                            <div class="metric-footer">
+                                <span>Above 85% benchmark</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card metric-pink">
+                            <div class="metric-content">
+                                <div class="metric-info">
+                                    <p class="metric-label">Active Projects</p>
+                                    <p class="metric-value" id="activeProjects">2</p>
+                                </div>
+                                <i data-lucide="beaker" class="metric-icon"></i>
+                            </div>
+                            <div class="metric-footer">
+                                <span>In progress</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Growth Snapshot -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                <i data-lucide="trending-up"></i>
+                                Growth Snapshot
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div id="growthSnapshotGrid" class="growth-snapshot-grid">
+                                <!-- Dynamically populated -->
+                            </div>
+                            <button class="btn btn-text btn-full-width" id="viewAllGrowthBtn">
+                                View All Growth Areas
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Achievements -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                <i data-lucide="award"></i>
+                                Recent Achievements
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div id="badgesGrid" class="badges-grid">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Growth Map Tab -->
+                <section id="growthTab" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Multidimensional Growth Constellation</h2>
+                            <button class="btn btn-primary btn-sm">Auto-Sync from Activities</button>
+                        </div>
+                        <div class="card-body">
+                            <div id="growthAreasContainer" class="growth-areas-container">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Tab -->
+                <section id="projectsTab" class="tab-content">
+                    <div class="tab-header">
+                        <button class="btn btn-primary" id="addProjectBtn">
+                            <i data-lucide="plus"></i>
+                            Add New Project
+                        </button>
+                    </div>
+                    <div id="projectsContainer" class="projects-container">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <!-- Badges Tab -->
+                <section id="badgesTab" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Soulbound Achievement Badges</h2>
+                            <div class="badge-verification">
+                                <i data-lucide="lock"></i>
+                                <span>Blockchain Verified • Non-Transferable</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="allBadgesGrid" class="badges-grid-large">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reflections Tab -->
+                <section id="reflectionsTab" class="tab-content">
+                    <div class="tab-header">
+                        <button class="btn btn-primary" id="addReflectionBtn">
+                            <i data-lucide="plus"></i>
+                            Add Reflection
+                        </button>
+                    </div>
+                    <div id="reflectionsContainer" class="reflections-container">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Add Project -->
+    <div id="addProjectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add New Project</h2>
+                <button class="modal-close" data-close="addProjectModal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addProjectForm">
+                    <div class="form-group">
+                        <label for="projectTitle">Project Title</label>
+                        <input type="text" id="projectTitle" class="form-control" placeholder="e.g., Water Harvesting System" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectFocus">Focus Areas</label>
+                        <input type="text" id="projectFocus" class="form-control" placeholder="e.g., Engineering, Sustainability" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectDescription">Description</label>
+                        <textarea id="projectDescription" class="form-control" rows="4" placeholder="Describe your project..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectImpact">Impact</label>
+                        <input type="text" id="projectImpact" class="form-control" placeholder="e.g., Reduced water waste by 20%">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectStatus">Status</label>
+                        <select id="projectStatus" class="form-control">
+                            <option value="in-progress">In Progress</option>
+                            <option value="active">Active</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Attachments</label>
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <i data-lucide="upload"></i>
+                            <span>Click to upload or drag and drop</span>
+                            <input type="file" id="projectFiles" multiple hidden>
+                        </div>
+                        <div id="uploadedFilesList" class="uploaded-files-list"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Add Project</button>
+                        <button type="button" class="btn btn-secondary" data-close="addProjectModal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Add Reflection -->
+    <div id="addReflectionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Reflection</h2>
+                <button class="modal-close" data-close="addReflectionModal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addReflectionForm">
+                    <div class="form-group">
+                        <label for="reflectionAuthor">Author</label>
+                        <select id="reflectionAuthor" class="form-control">
+                            <option value="Self">Self Reflection</option>
+                            <option value="Mentor">Mentor</option>
+                            <option value="Parent">Parent/Guardian</option>
+                            <option value="Peer">Peer Mentor</option>
+                            <option value="Elder">Elder Wisdom-Keeper</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reflectionText">Reflection</label>
+                        <textarea id="reflectionText" class="form-control" rows="6" placeholder="Share your thoughts, learnings, and growth..." required></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save Reflection</button>
+                        <button type="button" class="btn btn-secondary" data-close="addReflectionModal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Edit Growth Area -->
+    <div id="editGrowthModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="editGrowthTitle">Edit Growth Area</h2>
+                <button class="modal-close" data-close="editGrowthModal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editGrowthForm">
+                    <input type="hidden" id="editGrowthAreaName">
+                    <div class="form-group">
+                        <label>Level</label>
+                        <div class="star-selector" id="starSelector">
+                            <button type="button" class="star-btn" data-level="1">
+                                <i data-lucide="star"></i>
+                            </button>
+                            <button type="button" class="star-btn" data-level="2">
+                                <i data-lucide="star"></i>
+                            </button>
+                            <button type="button" class="star-btn" data-level="3">
+                                <i data-lucide="star"></i>
+                            </button>
+                            <button type="button" class="star-btn" data-level="4">
+                                <i data-lucide="star"></i>
+                            </button>
+                            <button type="button" class="star-btn" data-level="5">
+                                <i data-lucide="star"></i>
+                            </button>
+                        </div>
+                        <p class="star-description" id="starDescription">Awakening</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Trend</label>
+                        <div class="trend-selector">
+                            <button type="button" class="trend-btn" data-trend="up">
+                                <i data-lucide="trending-up"></i>
+                                Growing
+                            </button>
+                            <button type="button" class="trend-btn" data-trend="stable">
+                                <i data-lucide="minus"></i>
+                                Stable
+                            </button>
+                            <button type="button" class="trend-btn" data-trend="down">
+                                <i data-lucide="trending-down"></i>
+                                Needs Focus
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-secondary" data-close="editGrowthModal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/uienc-dashboard.js"></script>
+    
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
