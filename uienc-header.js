@@ -3,6 +3,7 @@ class HeaderManager {
     constructor() {
         this.isLoggedIn = false;
         this.currentUser = null;
+        this.isMobileMenuOpen = false;
         this.init();
     }
 
@@ -39,7 +40,7 @@ class HeaderManager {
                     ${this.isLoggedIn ? this.getUserProfileHTML() : this.getAuthButtonsHTML()}
                 </div>
                 
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+                <button class="mobile-menu-btn" onclick="headerManager.toggleMobileMenu()">☰</button>
             </nav>
         `;
     }
@@ -77,13 +78,22 @@ class HeaderManager {
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-menu') && !e.target.closest('.mobile-menu-btn')) {
+            if (!e.target.closest('.nav-menu') && 
+                !e.target.closest('.mobile-menu-btn') &&
+                this.isMobileMenuOpen) {
                 this.closeMobileMenu();
             }
         });
 
         // Handle scroll events for header
         window.addEventListener('scroll', this.handleScroll.bind(this));
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isMobileMenuOpen) {
+                this.closeMobileMenu();
+            }
+        });
     }
 
     handleScroll() {
@@ -107,12 +117,40 @@ class HeaderManager {
         }
     }
 
+    toggleMobileMenu() {
+        const navMenu = document.querySelector('.nav-menu');
+        if (this.isMobileMenuOpen) {
+            this.closeMobileMenu();
+        } else {
+            this.openMobileMenu();
+        }
+    }
+
+    openMobileMenu() {
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.add('active');
+        this.isMobileMenuOpen = true;
+        
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeMobileMenu() {
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.remove('active');
+        this.isMobileMenuOpen = false;
+        
+        // Restore body scroll
+        document.body.style.overflow = 'auto';
+    }
+
     login(userData) {
         this.isLoggedIn = true;
         this.currentUser = userData;
         localStorage.setItem('uienc_user', JSON.stringify(userData));
         this.renderHeader();
         this.closeAuthModal();
+        this.closeMobileMenu();
     }
 
     logout() {
@@ -120,6 +158,7 @@ class HeaderManager {
         this.currentUser = null;
         localStorage.removeItem('uienc_user');
         this.renderHeader();
+        this.closeMobileMenu();
     }
 }
 
@@ -128,6 +167,7 @@ function openAuthModal() {
     const modal = document.getElementById('auth-modal');
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    headerManager.closeMobileMenu(); // Close mobile menu when auth modal opens
 }
 
 function closeAuthModal() {
@@ -136,22 +176,45 @@ function closeAuthModal() {
     document.body.style.overflow = 'auto';
 }
 
+// Direct Authentication Links - Replace with your actual URLs
 function googleAuth() {
-    // Simulate Google OAuth
+    // Direct Google OAuth URL - Replace with your actual Google OAuth URL
+    const googleAuthUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' + 
+        'client_id=YOUR_GOOGLE_CLIENT_ID&' +
+        'redirect_uri=YOUR_REDIRECT_URI&' +
+        'response_type=code&' +
+        'scope=email profile&' +
+        'access_type=offline&' +
+        'prompt=consent';
+    
+    // For demo purposes, we'll simulate a successful login
+    // In production, replace this with: window.location.href = googleAuthUrl;
+    
     const userData = {
-        name: 'Demo User',
-        email: 'demo@uienc.org',
-        avatar: '👤'
+        name: 'Google User',
+        email: 'user@gmail.com',
+        avatar: '👤',
+        provider: 'google'
     };
     headerManager.login(userData);
 }
 
 function digilockerAuth() {
-    // Simulate DigiLocker OAuth
+    // Direct DigiLocker OAuth URL - Replace with your actual DigiLocker URL
+    const digilockerAuthUrl = 'https://digilocker.gov.in/oauth2/1/authorize?' +
+        'client_id=YOUR_DIGILOCKER_CLIENT_ID&' +
+        'redirect_uri=YOUR_REDIRECT_URI&' +
+        'response_type=code&' +
+        'state=YOUR_STATE';
+    
+    // For demo purposes, we'll simulate a successful login
+    // In production, replace this with: window.location.href = digilockerAuthUrl;
+    
     const userData = {
-        name: 'Verified User',
-        email: 'verified@uienc.org',
-        avatar: '🆔'
+        name: 'DigiLocker User',
+        email: 'user@digilocker.gov.in',
+        avatar: '🆔',
+        provider: 'digilocker'
     };
     headerManager.login(userData);
 }
@@ -159,17 +222,6 @@ function digilockerAuth() {
 function showRegistration() {
     closeAuthModal();
     scrollToSection('registration');
-}
-
-// Mobile Menu Functions
-function toggleMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.toggle('active');
-}
-
-function closeMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.remove('active');
 }
 
 // Smooth Scroll Function
@@ -184,7 +236,7 @@ function scrollToSection(sectionId) {
             behavior: 'smooth'
         });
         
-        closeMobileMenu();
+        headerManager.closeMobileMenu();
     }
 }
 
@@ -196,6 +248,12 @@ window.addEventListener('click', (e) => {
     }
 });
 
+// Handle window resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && headerManager.isMobileMenuOpen) {
+        headerManager.closeMobileMenu();
+    }
+});
+
 // Initialize Header Manager
 const headerManager = new HeaderManager();
-
