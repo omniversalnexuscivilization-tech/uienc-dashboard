@@ -176,6 +176,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--text-dark);
+    z-index: 1002;
 }
 
 /* Responsive Design */
@@ -186,6 +187,8 @@ body {
 
     .mobile-menu-btn {
         display: block;
+        position: relative;
+        z-index: 1002;
     }
 
     .nav-menu {
@@ -201,6 +204,10 @@ body {
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
+        z-index: 1001; /* Higher z-index */
+        border-top: 1px solid var(--border);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -209,10 +216,26 @@ body {
         visibility: visible;
     }
 
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-menu li:last-child a {
+        border-bottom: none;
+    }
+
     .user-auth {
         flex-direction: column;
         width: 100%;
         gap: 0.5rem;
+        margin-top: 1rem;
     }
 
     .login-btn, .register-btn {
@@ -291,11 +314,13 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .auth-btn:hover {
     border-color: var(--primary-color);
     background: var(--background-light);
+    text-decoration: none;
 }
 
 .google-auth {
@@ -388,4 +413,3 @@ body {
     text-decoration: none;
     font-weight: 500;
 }
-
