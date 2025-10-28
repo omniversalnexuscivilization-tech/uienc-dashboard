@@ -1,7 +1,7 @@
 /* Footer Styles */
 .main-footer {
-    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-    color: white;
+    background: #000000; /* Pure black background */
+    color: white; /* White text */
     padding: 3rem 0 1rem;
 }
 
@@ -16,7 +16,7 @@
     font-size: 1.125rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    color: white;
+    color: white; /* Ensure headings are white */
 }
 
 /* Footer Logo */
@@ -27,6 +27,7 @@
     margin-bottom: 1rem;
     font-weight: 700;
     font-size: 1.5rem;
+    color: white; /* White logo text */
 }
 
 .footer-logo img {
@@ -35,7 +36,7 @@
 }
 
 .footer-description {
-    color: #d1d5db;
+    color: #d1d5db; /* Light gray for description */
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -57,6 +58,7 @@
     text-decoration: none;
     font-size: 1.25rem;
     transition: all 0.3s ease;
+    color: white; /* White social icons */
 }
 
 .social-link:hover {
@@ -74,13 +76,13 @@
 }
 
 .footer-links a {
-    color: #d1d5db;
+    color: #d1d5db; /* Light gray links */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: white;
+    color: white; /* White on hover */
 }
 
 /* Contact Info */
@@ -93,7 +95,7 @@
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.75rem;
-    color: #d1d5db;
+    color: #d1d5db; /* Light gray contact info */
 }
 
 /* Newsletter */
@@ -156,7 +158,7 @@
 }
 
 .footer-copyright {
-    color: #9ca3af;
+    color: #9ca3af; /* Light gray copyright */
     font-size: 0.875rem;
 }
 
@@ -167,7 +169,7 @@
 }
 
 .footer-tech span {
-    color: #9ca3af;
+    color: #9ca3af; /* Light gray tech text */
     font-size: 0.875rem;
 }
 
@@ -175,6 +177,7 @@
     height: 24px;
     opacity: 0.7;
     transition: opacity 0.3s ease;
+    filter: brightness(0) invert(1); /* Make white */
 }
 
 .tech-logo:hover {
@@ -213,44 +216,3 @@
         justify-content: center;
     }
 }
-
-/* Additional Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.mb-2 {
-    margin-bottom: 2rem;
-}
-
-.mt-2 {
-    margin-top: 2rem;
-}
-
-/* Smooth transitions for all interactive elements */
-a, button, .card, .feature-item {
-    transition: all 0.3s ease;
-}
-
-/* Focus styles for accessibility */
-a:focus, button:focus, input:focus, select:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-/* Loading states */
-.loading {
-    opacity: 0.6;
-    pointer-events: none;
-}
-
-/* Success states */
-.success {
-    color: var(--secondary-color);
-}
-
-/* Error states */
-.error {
-    color: #ef4444;
-}
-
