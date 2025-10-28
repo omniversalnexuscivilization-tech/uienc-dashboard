@@ -1091,3 +1091,94 @@ section {
     }
 }
 
+/* Mobile Responsiveness Fixes */
+@media (max-width: 768px) {
+    main {
+        margin-top: 70px; /* Adjust for fixed header */
+    }
+
+    .hero-section {
+        padding: 4rem 0;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .cta-primary, .cta-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Ensure content doesn't get hidden behind fixed header */
+    section {
+        scroll-margin-top: 80px;
+    }
+
+    /* Fix z-index issues */
+    .main-header {
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        z-index: 1001;
+    }
+
+    .auth-modal {
+        z-index: 2000;
+    }
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure proper spacing on very small screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .dashboard-grid,
+    .about-grid,
+    .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .registration-form {
+        padding: 1.5rem;
+    }
+}
