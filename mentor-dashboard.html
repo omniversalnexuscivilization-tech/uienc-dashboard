@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIENC Mentor Dashboard - Multiple Learners View | ONSNC.org</title>
+    <meta name="description" content="Teacher and Mentor Dashboard for monitoring multiple learners in UIENC 2.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/uienc-dashboard.css">
+    <link rel="stylesheet" href="css/mentor-dashboard.css">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="mentor-mode">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Loading Mentor Dashboard...</p>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notificationToast" class="notification-toast hidden">
+        <i data-lucide="check-circle" class="notification-icon"></i>
+        <span id="notificationMessage"></span>
+    </div>
+
+    <!-- Main Container -->
+    <div id="mainApp" class="hidden">
+        <!-- Header -->
+        <header class="dashboard-header mentor-header">
+            <div class="header-container">
+                <div class="header-left">
+                    <div class="mentor-avatar">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+                    <div class="mentor-info">
+                        <h1 class="mentor-name" id="mentorName">Mr. Anil Das</h1>
+                        <p class="mentor-details" id="mentorDetails">Learning Facilitator • Green Pod</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-secondary" id="addLearnerBtn">
+                        <i data-lucide="user-plus"></i>
+                        Add Learner
+                    </button>
+                    <button class="btn btn-primary" id="exportAllBtn">
+                        <i data-lucide="download"></i>
+                        Export All
+                    </button>
+                    <button class="btn btn-icon" id="notificationsBtn">
+                        <i data-lucide="bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="btn btn-icon" id="settingsBtn">
+                        <i data-lucide="settings"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <div class="nav-container">
+                <button class="nav-tab active" data-tab="overview">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Overview</span>
+                </button>
+                <button class="nav-tab" data-tab="learners">
+                    <i data-lucide="users"></i>
+                    <span>Learners</span>
+                </button>
+                <button class="nav-tab" data-tab="analytics">
+                    <i data-lucide="bar-chart-3"></i>
+                    <span>Analytics</span>
+                </button>
+                <button class="nav-tab" data-tab="progress">
+                    <i data-lucide="trending-up"></i>
+                    <span>Progress Tracking</span>
+                </button>
+                <button class="nav-tab" data-tab="feedback">
+                    <i data-lucide="message-square"></i>
+                    <span>Feedback</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                
+                <!-- Overview Tab -->
+                <section id="overviewTab" class="tab-content active">
+                    <!-- Pod Summary Cards -->
+                    <div class="pod-summary-grid">
+                        <div class="summary-card card-purple">
+                            <div class="summary-icon">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <div class="summary-info">
+                                <h3>Total Learners</h3>
+                                <p class="summary-value" id="totalLearners">12</p>
+                                <span class="summary-trend positive">+2 this month</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-card card-blue">
+                            <div class="summary-icon">
+                                <i data-lucide="target"></i>
+                            </div>
+                            <div class="summary-info">
+                                <h3>Avg Contribution</h3>
+                                <p class="summary-value" id="avgContribution">84.2</p>
+                                <span class="summary-trend positive">+3.5 points</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-card card-green">
+                            <div class="summary-icon">
+                                <i data-lucide="book-open"></i>
+                            </div>
+                            <div class="summary-info">
+                                <h3>Active Projects</h3>
+                                <p class="summary-value" id="activeProjects">28</p>
+                                <span class="summary-trend">Across pod</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-card card-orange">
+                            <div class="summary-icon">
+                                <i data-lucide="alert-circle"></i>
+                            </div>
+                            <div class="summary-info">
+                                <h3>Needs Attention</h3>
+                                <p class="summary-value" id="needsAttention">3</p>
+                                <span class="summary-trend negative">Review needed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="card quick-actions-card">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                <i data-lucide="zap"></i>
+                                Quick Actions
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="quick-actions-grid">
+                                <button class="quick-action-btn" onclick="openAddFeedbackModal()">
+                                    <i data-lucide="message-circle"></i>
+                                    <span>Add Reflection</span>
+                                </button>
+                                <button class="quick-action-btn" onclick="openBadgeAwardModal()">
+                                    <i data-lucide="award"></i>
+                                    <span>Award Badge</span>
+                                </button>
+                                <button class="quick-action-btn" onclick="scheduleReviewSession()">
+                                    <i data-lucide="calendar"></i>
+                                    <span>Schedule Review</span>
+                                </button>
+                                <button class="quick-action-btn" onclick="exportPodReport()">
+                                    <i data-lucide="file-text"></i>
+                                    <span>Pod Report</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                <i data-lucide="activity"></i>
+                                Recent Activity
+                            </h2>
+                            <button class="btn btn-text">View All</button>
+                        </div>
+                        <div class="card-body">
+                            <div id="recentActivityList" class="activity-list">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Learners Needing Attention -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                <i data-lucide="alert-triangle"></i>
+                                Learners Needing Attention
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div id="attentionLearnersList" class="attention-list">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Learners Tab -->
+                <section id="learnersTab" class="tab-content">
+                    <!-- Search and Filter -->
+                    <div class="learners-toolbar">
+                        <div class="search-box">
+                            <i data-lucide="search"></i>
+                            <input type="text" id="learnerSearch" placeholder="Search learners..." />
+                        </div>
+                        <div class="filter-group">
+                            <select id="statusFilter" class="filter-select">
+                                <option value="all">All Status</option>
+                                <option value="on-track">On Track</option>
+                                <option value="needs-support">Needs Support</option>
+                                <option value="excelling">Excelling</option>
+                            </select>
+                            <select id="sortBy" class="filter-select">
+                                <option value="name">Sort by Name</option>
+                                <option value="contribution">Contribution Score</option>
+                                <option value="recent">Recent Activity</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Learners Grid -->
+                    <div id="learnersGrid" class="learners-grid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <!-- Analytics Tab -->
+                <section id="analyticsTab" class="tab-content">
+                    <div class="analytics-header">
+                        <h2>Pod Analytics Dashboard</h2>
+                        <div class="date-range-picker">
+                            <select id="analyticsTimeframe">
+                                <option value="week">This Week</option>
+                                <option value="month" selected>This Month</option>
+                                <option value="quarter">This Quarter</option>
+                                <option value="year">This Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Analytics Grid -->
+                    <div class="analytics-grid">
+                        <!-- Growth Distribution -->
+                        <div class="card analytics-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Growth Level Distribution</h3>
+                            </div>
+                            <div class="card-body">
+                                <div id="growthDistributionChart" class="chart-container">
+                                    <!-- Chart will be rendered here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contribution Trends -->
+                        <div class="card analytics-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Contribution Score Trends</h3>
+                            </div>
+                            <div class="card-body">
+                                <div id="contributionTrendsChart" class="chart-container">
+                                    <!-- Chart will be rendered here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Badge Distribution -->
+                        <div class="card analytics-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Badge Distribution</h3>
+                            </div>
+                            <div class="card-body">
+                                <div id="badgeDistributionChart" class="chart-container">
+                                    <!-- Chart will be rendered here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Completion Rates -->
+                        <div class="card analytics-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Project Completion Rates</h3>
+                            </div>
+                            <div class="card-body">
+                                <div id="projectCompletionChart" class="chart-container">
+                                    <!-- Chart will be rendered here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Stats Table -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Detailed Statistics</h3>
+                            <button class="btn btn-secondary btn-sm" onclick="exportAnalyticsData()">
+                                <i data-lucide="download"></i>
+                                Export Data
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div id="detailedStatsTable" class="stats-table-container">
+                                <!-- Table will be rendered here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Progress Tracking Tab -->
+                <section id="progressTab" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Individual Progress Tracking</h2>
+                        </div>
+                        <div class="card-body">
+                            <div id="progressTrackingContainer">
+                                <!-- Progress tracking interface -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Feedback Tab -->
+                <section id="feedbackTab" class="tab-content">
+                    <div class="feedback-toolbar">
+                        <button class="btn btn-primary" onclick="openAddFeedbackModal()">
+                            <i data-lucide="plus"></i>
+                            Add Reflection/Feedback
+                        </button>
+                    </div>
+
+                    <div id="feedbackList" class="feedback-list">
+                        <!-- Feedback items dynamically populated -->
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal: Add Learner -->
+    <div id="addLearnerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add New Learner</h2>
+                <button class="modal-close" data-close="addLearnerModal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addLearnerForm">
+                    <div class="form-group">
+                        <label for="learnerName">Learner Name</label>
+                        <input type="text" id="learnerName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="learnerAge">Age</label>
+                        <input type="number" id="learnerAge" class="form-control" min="5" max="18" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="learnerPod">Pod/Group</label>
+                        <select id="learnerPod" class="form-control">
+                            <option value="green-pod">Green Pod</option>
+                            <option value="blue-pod">Blue Pod</option>
+                            <option value="yellow-pod">Yellow Pod</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="learnerJoinDate">Join Date</label>
+                        <input type="date" id="learnerJoinDate" class="form-control" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Add Learner</button>
+                        <button type="button" class="btn btn-secondary" data-close="addLearnerModal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Add Feedback/Reflection -->
+    <div id="addFeedbackModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Mentor Reflection</h2>
+                <button class="modal-close" data-close="addFeedbackModal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addFeedbackForm">
+                    <div class="form-group">
+                        <label for="feedbackLearner">Select Learner</label>
+                        <select id="feedbackLearner" class="form-control" required>
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackText">Reflection/Feedback</label>
+                        <textarea id="feedbackText" class="form-control" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackTags">Tags (comma-separated)</label>
+                        <input type="text" id="feedbackTags" class="form-control" placeholder="e.g., leadership, creativity, collaboration">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save Reflection</button>
+                        <button type="button" class="btn btn-secondary" data-close="addFeedbackModal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Award Badge -->
+    <div id="awardBadgeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Award Badge</h2>
+                <button class="modal-close" data-close="awardBadgeModal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="awardBadgeForm">
+                    <div class="form-group">
+                        <label for="badgeLearner">Select Learner</label>
+                        <select id="badgeLearner" class="form-control" required>
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="badgeType">Badge Type</label>
+                        <select id="badgeType" class="form-control" required>
+                            <option value="">Select a badge...</option>
+                            <option value="eco-steward">🌱 Eco-Steward</option>
+                            <option value="innovator">💡 Young Innovator</option>
+                            <option value="leader">👥 Pod Leader</option>
+                            <option value="scientist">🔬 Citizen Scientist</option>
+                            <option value="artist">🎨 Creative Artist</option>
+                            <option value="collaborator">🤝 Master Collaborator</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="badgeReason">Reason for Award</label>
+                        <textarea id="badgeReason" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Award Badge</button>
+                        <button type="button" class="btn btn-secondary" data-close="awardBadgeModal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Learner Detail View -->
+    <div id="learnerDetailModal" class="modal modal-large">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="learnerDetailName">Learner Details</h2>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary btn-sm" onclick="viewLearnerDashboard()">
+                        <i data-lucide="external-link"></i>
+                        Open Dashboard
+                    </button>
+                    <button class="modal-close" data-close="learnerDetailModal">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="learnerDetailContent">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/uienc-dashboard.js"></script>
+    <script src="js/mentor-dashboard.js"></script>
+    
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
