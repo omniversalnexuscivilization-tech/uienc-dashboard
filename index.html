@@ -6,9 +6,8 @@
     <title>UIENC 2.0 - Enhanced Markless Growth Report Card</title>
     
     <!-- CSS Files -->
-    <link rel="stylesheet" href="uienc-header.css">
-    <link rel="stylesheet" href="uienc-body.css">
-    <link rel="stylesheet" href="uienc-footer.css">
+    <link rel="stylesheet" href="global-style.css">
+    <link rel="stylesheet" href="body-styles.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +17,39 @@
 </head>
 <body>
     <!-- Header Section -->
-    <header id="main-header"></header>
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>UIENC <span class="version">2.0</span></h1>
+                    <span class="tagline">Enhanced Markless Growth Report Card</span>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#vision" class="nav-link">Vision</a></li>
+                        <li><a href="#mission" class="nav-link">Mission</a></li>
+                        <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                        <li><a href="#get-involved" class="nav-link">Get Involved</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="btn-login" onclick="openAuthModal()">Login</button>
+                    <button class="btn-register" onclick="scrollToSection('registration')">Register</button>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
 
     <!-- Main Content -->
     <main>
@@ -29,6 +60,8 @@
                     <div class="shape shape-1"></div>
                     <div class="shape shape-2"></div>
                     <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                    <div class="shape shape-5"></div>
                 </div>
             </div>
             
@@ -65,7 +98,7 @@
                     </div>
                     
                     <div class="hero-cta">
-                        <button class="cta-primary" onclick="openAuthModal()">Start Your Journey</button>
+                        <button class="cta-primary" onclick="scrollToSection('registration')">Start Your Journey</button>
                         <button class="cta-secondary" onclick="scrollToSection('about')">Learn More</button>
                     </div>
                 </div>
@@ -236,10 +269,170 @@
             </div>
         </section>
 
+        <!-- Dashboard Preview Section -->
+        <section id="dashboard" class="dashboard-section">
+            <div class="container">
+                <h2 class="section-title">Interactive Dashboards</h2>
+                <p class="section-subtitle">Personalized insights for every stakeholder</p>
+                
+                <div class="dashboard-preview">
+                    <div class="dashboard-cards">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <div class="card-icon">👨‍🎓</div>
+                                <h3>Learner Dashboard</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="progress-ring">
+                                    <svg width="120" height="120">
+                                        <circle class="progress-ring-bg" cx="60" cy="60" r="54"></circle>
+                                        <circle class="progress-ring-circle" cx="60" cy="60" r="54" style="stroke-dashoffset: 339.292;"></circle>
+                                    </svg>
+                                    <div class="progress-text">
+                                        <span class="progress-percent">75%</span>
+                                        <span class="progress-label">Learning Path</span>
+                                    </div>
+                                </div>
+                                <div class="dashboard-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">12</span>
+                                        <span class="stat-label">Projects</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">8</span>
+                                        <span class="stat-label">Skills</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">15</span>
+                                        <span class="stat-label">Badges</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="dashboard-learners.html" class="btn-dashboard">Explore Full Dashboard</a>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <div class="card-icon">👨‍🏫</div>
+                                <h3>Mentor Dashboard</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="mentor-stats">
+                                    <div class="mentor-stat">
+                                        <span class="stat-value">24</span>
+                                        <span class="stat-label">Learners</span>
+                                    </div>
+                                    <div class="mentor-stat">
+                                        <span class="stat-value">7</span>
+                                        <span class="stat-label">Learning Pods</span>
+                                    </div>
+                                    <div class="mentor-stat">
+                                        <span class="stat-value">18</span>
+                                        <span class="stat-label">Sessions</span>
+                                    </div>
+                                </div>
+                                <div class="mentor-progress">
+                                    <h4>Recent Feedback</h4>
+                                    <div class="feedback-item">
+                                        <div class="feedback-rating">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <p>"Great guidance on the biomimicry project"</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="dashboard-mentors.html" class="btn-dashboard">Explore Full Dashboard</a>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <div class="card-icon">👨‍👩‍👧‍👦</div>
+                                <h3>Parent Dashboard</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="child-progress">
+                                    <h4>Child Progress</h4>
+                                    <div class="progress-bars">
+                                        <div class="progress-bar">
+                                            <div class="progress-label">Logical Thinking</div>
+                                            <div class="progress-track">
+                                                <div class="progress-fill" style="width: 80%"></div>
+                                            </div>
+                                            <div class="progress-value">80%</div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-label">Creative Expression</div>
+                                            <div class="progress-track">
+                                                <div class="progress-fill" style="width: 95%"></div>
+                                            </div>
+                                            <div class="progress-value">95%</div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-label">Social Skills</div>
+                                            <div class="progress-track">
+                                                <div class="progress-fill" style="width: 70%"></div>
+                                            </div>
+                                            <div class="progress-value">70%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <a href="dashboard-parents.html" class="btn-dashboard">Explore Full Dashboard</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-features">
+                        <h3>Dashboard Features</h3>
+                        <div class="features-list">
+                            <div class="feature">
+                                <span class="feature-icon">📊</span>
+                                <div class="feature-content">
+                                    <h4>Real-time Analytics</h4>
+                                    <p>Track progress across multiple intelligences with interactive charts</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">📱</span>
+                                <div class="feature-content">
+                                    <h4>Mobile Responsive</h4>
+                                    <p>Access your dashboard from any device, anywhere</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🔔</span>
+                                <div class="feature-content">
+                                    <h4>Smart Notifications</h4>
+                                    <p>Get alerts for important milestones and upcoming events</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">📥</span>
+                                <div class="feature-content">
+                                    <h4>Export Reports</h4>
+                                    <p>Download detailed PDF reports of learning progress</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Registration Section -->
         <section id="registration" class="registration-section">
             <div class="container">
                 <h2 class="section-title">Join the UIENC 2.0 Community</h2>
+                <p class="section-subtitle">Choose your role and start your journey</p>
                 
                 <div class="registration-tabs">
                     <button class="tab-btn active" data-tab="learner">As a Learner</button>
@@ -248,168 +441,80 @@
                     <button class="tab-btn" data-tab="community">Community Partner</button>
                 </div>
                 
-                <form class="registration-form active" id="learner-form">
-                    <div class="form-group">
-                        <label for="fullName">Full Name *</label>
-                        <input type="text" id="fullName" name="fullName" required>
-                    </div>
-                    
-                    <div class="form-row">
+                <div class="registration-content">
+                    <form class="registration-form active" id="learner-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfYOUR_GOOGLE_FORM_ID_HERE/formResponse" method="POST" target="hidden_iframe">
                         <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="entry.123456789" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="entry.987654321" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="entry.555555555">
+                            </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
+                            <label for="ageGroup">Age Group *</label>
+                            <select id="ageGroup" name="entry.444444444" required>
+                                <option value="">Select age group</option>
+                                <option value="5-10">5-10 years</option>
+                                <option value="11-14">11-14 years</option>
+                                <option value="15-18">15-18 years</option>
+                                <option value="19-25">19-25 years</option>
+                                <option value="25+">25+ years</option>
+                            </select>
                         </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="ageGroup">Age Group *</label>
-                        <select id="ageGroup" name="ageGroup" required>
-                            <option value="">Select age group</option>
-                            <option value="5-10">5-10 years</option>
-                            <option value="11-14">11-14 years</option>
-                            <option value="15-18">15-18 years</option>
-                            <option value="19-25">19-25 years</option>
-                            <option value="25+">25+ years</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="location">Location *</label>
-                        <input type="text" id="location" name="location" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Areas of Interest</label>
-                        <div class="interest-tags">
-                            <label class="tag-option">
-                                <input type="checkbox" name="interests" value="eco-literacy">
-                                <span>Eco-Literacy</span>
-                            </label>
-                            <label class="tag-option">
-                                <input type="checkbox" name="interests" value="indigenous-knowledge">
-                                <span>Indigenous Knowledge</span>
-                            </label>
-                            <label class="tag-option">
-                                <input type="checkbox" name="interests" value="technology">
-                                <span>Technology & AI</span>
-                            </label>
-                            <label class="tag-option">
-                                <input type="checkbox" name="interests" value="arts">
-                                <span>Arts & Creativity</span>
-                            </label>
-                            <label class="tag-option">
-                                <input type="checkbox" name="interests" value="leadership">
-                                <span>Community Leadership</span>
-                            </label>
+                        
+                        <div class="form-group">
+                            <label for="location">Location *</label>
+                            <input type="text" id="location" name="entry.333333333" required>
                         </div>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Create Account</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Dashboard Preview Section -->
-        <section id="dashboard" class="dashboard-section">
-            <div class="container">
-                <h2 class="section-title">Your Learning Dashboard</h2>
-                
-                <div class="dashboard-preview">
-                    <div class="dashboard-grid">
-                        <!-- Growth Constellation -->
-                        <div class="dashboard-card growth-constellation">
-                            <h3>Growth Constellation</h3>
-                            <div class="constellation-visual">
-                                <div class="star-chart">
-                                    <div class="star" style="top: 20%; left: 30%;" data-rating="4"></div>
-                                    <div class="star" style="top: 40%; left: 70%;" data-rating="5"></div>
-                                    <div class="star" style="top: 60%; left: 20%;" data-rating="3"></div>
-                                    <div class="star" style="top: 80%; left: 50%;" data-rating="4"></div>
-                                    <div class="star" style="top: 30%; left: 60%;" data-rating="5"></div>
-                                </div>
+                        
+                        <div class="form-group">
+                            <label>Areas of Interest</label>
+                            <div class="interest-tags">
+                                <label class="tag-option">
+                                    <input type="checkbox" name="entry.222222222" value="eco-literacy">
+                                    <span>Eco-Literacy</span>
+                                </label>
+                                <label class="tag-option">
+                                    <input type="checkbox" name="entry.222222222" value="indigenous-knowledge">
+                                    <span>Indigenous Knowledge</span>
+                                </label>
+                                <label class="tag-option">
+                                    <input type="checkbox" name="entry.222222222" value="technology">
+                                    <span>Technology & AI</span>
+                                </label>
+                                <label class="tag-option">
+                                    <input type="checkbox" name="entry.222222222" value="arts">
+                                    <span>Arts & Creativity</span>
+                                </label>
+                                <label class="tag-option">
+                                    <input type="checkbox" name="entry.222222222" value="leadership">
+                                    <span>Community Leadership</span>
+                                </label>
                             </div>
                         </div>
                         
-                        <!-- Recent Activities -->
-                        <div class="dashboard-card recent-activities">
-                            <h3>Recent Learning Activities</h3>
-                            <div class="activity-feed">
-                                <div class="activity-item">
-                                    <span class="activity-icon">🔬</span>
-                                    <div class="activity-content">
-                                        <span class="activity-text">Completed Mycoremediation Experiment</span>
-                                        <span class="activity-time">2 days ago</span>
-                                    </div>
-                                </div>
-                                <div class="activity-item">
-                                    <span class="activity-icon">🌱</span>
-                                    <div class="activity-content">
-                                        <span class="activity-text">Earned Eco-Steward Badge Level 3</span>
-                                        <span class="activity-time">1 week ago</span>
-                                    </div>
-                                </div>
-                                <div class="activity-item">
-                                    <span class="activity-icon">🤝</span>
-                                    <div class="activity-content">
-                                        <span class="activity-text">Facilitated Green Week Community Event</span>
-                                        <span class="activity-time">2 weeks ago</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Badges Collection -->
-                        <div class="dashboard-card badges-collection">
-                            <h3>Your Soulbound Badges</h3>
-                            <div class="badges-grid">
-                                <div class="badge-item">
-                                    <div class="badge-icon">🌱</div>
-                                    <span class="badge-name">Eco-Steward</span>
-                                </div>
-                                <div class="badge-item">
-                                    <div class="badge-icon">💡</div>
-                                    <span class="badge-name">Young Innovator</span>
-                                </div>
-                                <div class="badge-item">
-                                    <div class="badge-icon">🤖</div>
-                                    <span class="badge-name">Ethical AI</span>
-                                </div>
-                                <div class="badge-item">
-                                    <div class="badge-icon">👥</div>
-                                    <span class="badge-name">Pod Leader</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Upcoming Events -->
-                        <div class="dashboard-card upcoming-events">
-                            <h3>Upcoming Learning Circles</h3>
-                            <div class="events-list">
-                                <div class="event-item">
-                                    <span class="event-date">Jun 15</span>
-                                    <span class="event-title">Monsoon Water Harvesting Workshop</span>
-                                </div>
-                                <div class="event-item">
-                                    <span class="event-date">Jun 22</span>
-                                    <span class="event-title">Indigenous Knowledge Sharing</span>
-                                </div>
-                                <div class="event-item">
-                                    <span class="event-date">Jun 30</span>
-                                    <span class="event-title">Community Project Showcase</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <button type="submit" class="submit-btn">Create Account</button>
+                    </form>
                     
-                    <div class="dashboard-cta">
-                        <button class="btn-primary" onclick="openAuthModal()">Access Full Dashboard</button>
+                    <div class="form-success" id="form-success" style="display: none;">
+                        <div class="success-icon">✅</div>
+                        <h3>Registration Successful!</h3>
+                        <p>Thank you for joining the UIENC 2.0 community. We'll contact you shortly with next steps.</p>
+                        <button class="btn-primary" onclick="closeSuccessMessage()">Continue Exploring</button>
                     </div>
                 </div>
+                
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
             </div>
         </section>
 
@@ -471,8 +576,33 @@
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <div class="image-placeholder">🎨</div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4>Indigenous Art Revival Project</h4>
+                                        <p class="project-description">
+                                            Documenting and preserving traditional art forms through digital media
+                                        </p>
+                                        <p class="project-stats">
+                                            <span>15 art forms documented</span>
+                                            <span>3 community workshops</span>
+                                        </p>
+                                        <div class="project-skills">
+                                            <span class="skill-tag">Cultural Preservation</span>
+                                            <span class="skill-tag">Digital Media</span>
+                                            <span class="skill-tag">Community Outreach</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div class="portfolio-actions">
+                        <button class="btn-primary" onclick="generatePortfolioPDF()">Download Portfolio PDF</button>
                     </div>
                 </div>
             </div>
@@ -575,7 +705,7 @@
                             <li>Access mentor resources</li>
                             <li>Participate in training</li>
                         </ul>
-                        <button class="involvement-btn">Apply as Mentor</button>
+                        <button class="involvement-btn" onclick="scrollToSection('registration')">Apply as Mentor</button>
                     </div>
                     
                     <div class="involvement-card">
@@ -641,7 +771,66 @@
     </main>
 
     <!-- Footer Section -->
-    <footer id="main-footer"></footer>
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>UIENC 2.0</h3>
+                        <p>Enhanced Markless Growth Report Card</p>
+                    </div>
+                    <p class="footer-description">
+                        Holistic Learning Documentation System for the 21st Century
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#get-involved">Get Involved</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="/user-guide">User Guide</a></li>
+                        <li><a href="/video-tutorials">Video Tutorials</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/research">Research Papers</a></li>
+                        <li><a href="/case-studies">Case Studies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info">
+                        <p>Email: info@uienc.org</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                        <p>Address: 123 Learning Street, Education City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 UIENC 2.0. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Auth Modal -->
     <div id="auth-modal" class="auth-modal">
@@ -654,15 +843,15 @@
                 </div>
                 
                 <div class="auth-options">
-                    <button class="auth-btn google-auth" onclick="googleAuth()">
+                    <a href="https://accounts.google.com/" class="auth-btn google-auth" target="_blank">
                         <span class="auth-icon">🔗</span>
                         Continue with Google
-                    </button>
+                    </a>
                     
-                    <button class="auth-btn digilocker-auth" onclick="digilockerAuth()">
+                    <a href="https://digilocker.gov.in/" class="auth-btn digilocker-auth" target="_blank">
                         <span class="auth-icon">🆔</span>
                         Sign in with DigiLocker
-                    </button>
+                    </a>
                     
                     <div class="auth-divider">
                         <span>or</span>
@@ -676,7 +865,7 @@
                     </div>
                     
                     <div class="signup-link">
-                        <p>New to UIENC? <a href="/register" onclick="showRegistration()">Create Account</a></p>
+                        <p>New to UIENC? <a href="#" onclick="scrollToSection('registration')">Create Account</a></p>
                     </div>
                 </div>
             </div>
@@ -684,8 +873,7 @@
     </div>
 
     <!-- JavaScript Files -->
-    <script src="uienc-header.js"></script>
-    <script src="uienc-body.js"></script>
-    <script src="uienc-footer.js"></script>
+    <script src="global-script.js"></script>
+    <script src="body-script.js"></script>
 </body>
 </html>
