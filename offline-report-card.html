@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIENC 2.0 Growth Report Card</title>
+    <link rel="stylesheet" href="offline-report-card.css">
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector no-print">
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+            <option value="as">অসমীয়া (Assamese)</option>
+            <option value="ka">কার্বি (Karbi)</option>
+        </select>
+    </div>
+
+    <!-- Page View Toggle -->
+    <div class="page-toggle no-print">
+        <button onclick="toggleView('summary')" class="toggle-btn active" id="summaryBtn">Summary View</button>
+        <button onclick="toggleView('detailed')" class="toggle-btn" id="detailedBtn">Detailed View</button>
+    </div>
+
+    <div class="card-container">
+        <!-- PAGE 1: SUMMARY -->
+        <div class="card-front page" id="page1">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="translate" data-en="🌱 GROWTH REPORT CARD" data-hi="🌱 विकास रिपोर्ट कार्ड" data-as="🌱 বিকাশ ৰিপ'ৰ্ট কাৰ্ড" data-ka="🌱 थेक्लाङ रिपोर्ट कार्ड">🌱 GROWTH REPORT CARD</h1>
+                <p class="subtitle translate" data-en="UIENC 2.0 Markless Assessment System | Quarter 2, 2025" data-hi="UIENC 2.0 अंकहीन मूल्यांकन प्रणाली | तिमाही 2, 2025" data-as="UIENC 2.0 নম্বৰহীন মূল্যায়ন ব্যৱস্থা | দ্বিতীয় ত্ৰৈমাসিক, 2025" data-ka="UIENC 2.0 नंबररलो मूल्यांकन प्रणाली | तिमाही 2, 2025">UIENC 2.0 Markless Assessment System | Quarter 2, 2025</p>
+            </div>
+            
+            <!-- Learner Information -->
+            <div class="learner-info">
+                <div class="info-item">
+                    <span class="info-label translate" data-en="Name:" data-hi="नाम:" data-as="নাম:" data-ka="मुंथि:">Name:</span>
+                    <span class="info-value">Aanya Ronghang</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label translate" data-en="Age:" data-hi="आयु:" data-as="বয়স:" data-ka="बर्खो:">Age:</span>
+                    <span class="info-value">14 years</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label translate" data-en="Learning Pod:" data-hi="शिक्षण समूह:" data-as="শিক্ষণ গোট:" data-ka="बाङहोन समूह:">Learning Pod:</span>
+                    <span class="info-value">Green Pod</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label translate" data-en="Period:" data-hi="अवधि:" data-as="সময়কাল:" data-ka="समय:">Period:</span>
+                    <span class="info-value">Apr-Jun 2025</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label translate" data-en="Mentor:" data-hi="गुरु:" data-as="শিক্ষক:" data-ka="गुरु:">Mentor:</span>
+                    <span class="info-value">Mr. Anil Das</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label translate" data-en="Location:" data-hi="स्थान:" data-as="স্থান:" data-ka="फान:">Location:</span>
+                    <span class="info-value">Moradiring, Karbi Anglong</span>
+                </div>
+            </div>
+
+            <!-- Project Photos -->
+            <div class="growth-section">
+                <div class="section-title translate" data-en="📸 Project Showcase" data-hi="📸 परियोजना प्रदर्शनी" data-as="📸 প্ৰকল্প প্ৰদৰ্শনী" data-ka="📸 काम देखाव">📸 Project Showcase</div>
+                <div class="project-gallery">
+                    <div class="project-photo">
+                        <img src="https://via.placeholder.com/200x150/4a8f4d/fff?text=Green+Week" alt="Green Week Initiative">
+                        <div class="photo-caption translate" data-en="Green Week Initiative" data-hi="हरित सप्ताह पहल" data-as="সেউজ সপ্তাহ কাৰ্যসূচী" data-ka="अहिम हप्ता पहल">Green Week Initiative</div>
+                    </div>
+                    <div class="project-photo">
+                        <img src="https://via.placeholder.com/200x150/f9a825/fff?text=Solar+Compost" alt="Solar Compost System">
+                        <div class="photo-caption translate" data-en="Solar Compost System" data-hi="सौर कम्पोस्ट प्रणाली" data-as="সৌৰ কম্পোষ্ট ব্যৱস্থা" data-ka="निसि कम्पोस्ट प्रणाली">Solar Compost System</div>
+                    </div>
+                    <div class="project-photo">
+                        <img src="https://via.placeholder.com/200x150/1976d2/fff?text=AI+Quiz+Game" alt="AI Quiz Game">
+                        <div class="photo-caption translate" data-en="AI Quiz Game" data-hi="AI क्विज़ गेम" data-as="AI কুইজ গেম" data-ka="AI प्रश्न खेल">AI Quiz Game</div>
+                    </div>
+                    <div class="project-photo">
+                        <img src="https://via.placeholder.com/200x150/2c5f2d/fff?text=Water+Research" alt="Water Conservation">
+                        <div class="photo-caption translate" data-en="Water Conservation Research" data-hi="जल संरक्षण अनुसंधान" data-as="পানী সংৰক্ষণ গৱেষণা" data-ka="दक्ला बाचाव खोजलो">Water Conservation Research</div>
+                    </div>
+                    <div class="project-photo">
+                        <img src="https://via.placeholder.com/200x150/e91e63/fff?text=Community+Leader" alt="Community Leadership">
+                        <div class="photo-caption translate" data-en="Community Leadership" data-hi="सामुदायिक नेतृत्व" data-as="সমাজ নেতৃত্ব" data-ka="लोक नेतृत्व">Community Leadership</div>
+                    </div>
+                    <div class="project-photo">
+                        <img src="https://via.placeholder.com/200x150/ff9800/fff?text=Field+Study" alt="Field Research">
+                        <div class="photo-caption translate" data-en="Field Research" data-hi="क्षेत्रीय अनुसंधान" data-as="ক্ষেত্ৰীয় গৱেষণা" data-ka="मे खोजलो">Field Research</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Growth Dimensions -->
+            <div class="growth-section">
+                <div class="section-title translate" data-en="📊 Growth Dimensions (Journey-Based Assessment)" data-hi="📊 विकास आयाम (यात्रा-आधारित मूल्यांकन)" data-as="📊 বিকাশৰ মাত্ৰা (যাত্ৰা-ভিত্তিক মূল্যায়ন)" data-ka="📊 थेक्लाङ मात्रा (लामक आधारित मूल्यांकन)">📊 Growth Dimensions (Journey-Based Assessment)</div>
+                
+                <div class="dimension-item">
+                    <span class="dimension-name translate" data-en="Critical Thinking & Problem-Solving" data-hi="आलोचनात्मक सोच और समस्या समाधान" data-as="সমালোচনামূলক চিন্তা আৰু সমস্যা সমাধান" data-ka="विचार आरो समस्या समाधान">Critical Thinking & Problem-Solving</span>
+                    <div class="dimension-level">
+                        <span class="growth-stars">★★★★☆</span>
+                        <span class="level-text translate" data-en="Maturing" data-hi="परिपक्व" data-as="পৰিপক্ক" data-ka="प्रु">Maturing</span>
+                    </div>
+                </div>
+                
+                <div class="dimension-item">
+                    <span class="dimension-name translate" data-en="Creativity & Innovation" data-hi="रचनात्मकता और नवाचार" data-as="সৃষ্টিশীলতা আৰু উদ্ভাৱন" data-ka="बार खेलाङदो आरो नोवा">Creativity & Innovation</span>
+                    <div class="dimension-level">
+                        <span class="growth-stars">★★★★★</span>
+                        <span class="level-text translate" data-en="Contributing" data-hi="योगदानी" data-as="অৱদানকাৰী" data-ka="पेनबिदो">Contributing</span>
+                    </div>
+                </div>
+                
+                <div class="dimension-item">
+                    <span class="dimension-name translate" data-en="Digital & AI Literacy" data-hi="डिजिटल और AI साक्षरता" data-as="ডিজিটেল আৰু AI সাক্ষৰতা" data-ka="डिजिटल आरो AI पढ़ावदो">Digital & AI Literacy</span>
+                    <div class="dimension-level">
+                        <span class="growth-stars">★★★★☆</span>
+                        <span class="level-text translate" data-en="Maturing" data-hi="परिपक्व" data-as="পৰিপক্ক" data-ka="प्रु">Maturing</span>
+                    </div>
+                </div>
+                
+                <div class="dimension-item">
+                    <span class="dimension-name translate" data-en="Emotional Intelligence" data-hi="भावनात्मक बुद्धिमत्ता" data-as="আৱেগিক বুদ্ধিমত্তা" data-ka="थुनवानि बुद्धि">Emotional Intelligence</span>
+                    <div class="dimension-level">
+                        <span class="growth-stars">★★★★☆</span>
+                        <span class="level-text translate" data-en="Maturing" data-hi="परिपक्व" data-as="পৰিপক্ক" data-ka="प्रु">Maturing</span>
+                    </div>
+                </div>
+                
+                <div class="dimension-item">
+                    <span class="dimension-name translate" data-en="Collaboration & Leadership" data-hi="सहयोग और नेतृत्व" data-as="সহযোগিতা আৰু নেতৃত्ব" data-ka="केलोदो आरो नेतृत्व">Collaboration & Leadership</span>
+                    <div class="dimension-level">
+                        <span class="growth-stars">★★★★★</span>
+                        <span class="level-text translate" data-en="Contributing" data-hi="योगदानी" data-as="অৱদানকাৰী" data-ka="पेनबिदो">Contributing</span>
+                    </div>
+                </div>
+                
+                <div class="dimension-item">
+                    <span class="dimension-name translate" data-en="Ethical Reasoning" data-hi="नैतिक तर्क" data-as="নৈতিক যুক্তি" data-ka="धर्म विचार">Ethical Reasoning</span>
+                    <div class="dimension-level">
+                        <span class="growth-stars">★★★★★</span>
+                        <span class="level-text translate" data-en="Contributing" data-hi="योगदानी" data-as="অৱদানকাৰী" data-ka="पेनबिदो">Contributing</span>
+                    </div>
+                </div>
+                
+                <div class="dimension-item">
+                    <span class="dimension-name translate" data-en="Environmental Consciousness" data-hi="पर्यावरण जागरूकता" data-as="পৰিৱেশ সচেতনতা" data-ka="लेहो जागरूकता">Environmental Consciousness</span>
+                    <div class="dimension-level">
+                        <span class="growth-stars">★★★★☆</span>
+                        <span class="level-text translate" data-en="Maturing" data-hi="परिपक्व" data-as="পৰিপক্ক" data-ka="प्रु">Maturing</span>
+                    </div>
+                </div>
+                
+                <div class="dimension-item">
+                    <span class="dimension-name translate" data-en="Self-Directed Learning" data-hi="स्व-निर्देशित शिक्षा" data-as="স্ব-নিৰ্দেশিত শিক্ষা" data-ka="निजोर बाङहोन">Self-Directed Learning</span>
+                    <div class="dimension-level">
+                        <span class="growth-stars">★★★★★</span>
+                        <span class="level-text translate" data-en="Contributing" data-hi="योगदानी" data-as="অৱদানকাৰী" data-ka="पेनबिदो">Contributing</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Badges Earned -->
+            <div class="growth-section">
+                <div class="section-title translate" data-en="🏅 Verified Achievements This Quarter" data-hi="🏅 इस तिमाही के सत्यापित उपलब्धियाँ" data-as="🏅 এই ত্ৰৈমাসিকৰ সত্যাপিত সাফল্য" data-ka="🏅 नि तिमाही रे सत्यापित काम">🏅 Verified Achievements This Quarter</div>
+                <div class="badges-section">
+                    <div class="badge-item">
+                        <span class="badge-icon">🌿</span>
+                        <div class="badge-info">
+                            <div class="badge-name">Eco-Steward</div>
+                            <div class="badge-date">May 15, 2025</div>
+                        </div>
+                    </div>
+                    
+                    <div class="badge-item">
+                        <span class="badge-icon">💡</span>
+                        <div class="badge-info">
+                            <div class="badge-name">Young Innovator</div>
+                            <div class="badge-date">Jun 2, 2025</div>
+                        </div>
+                    </div>
+                    
+                    <div class="badge-item">
+                        <span class="badge-icon">👥</span>
+                        <div class="badge-info">
+                            <div class="badge-name">Community Leader</div>
+                            <div class="badge-date">Jun 8, 2025</div>
+                        </div>
+                    </div>
+                    
+                    <div class="badge-item">
+                        <span class="badge-icon">🔬</span>
+                        <div class="badge-info">
+                            <div class="badge-name">Research Apprentice</div>
+                            <div class="badge-date">Jun 20, 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contribution Score -->
+            <div class="contribution-score">
+                <div class="score-number">82/100</div>
+                <div class="score-label translate" data-en="Life Contribution Index" data-hi="जीवन योगदान सूचकांक" data-as="জীৱন অৱদান সূচক" data-ka="आशि पेनबिदो सूचकांक">Life Contribution Index</div>
+                <div style="margin-top: 10px; font-size: 12px; opacity: 0.9;">
+                    <span class="translate" data-en="Community Service • Environmental Impact • Knowledge Sharing" data-hi="सामुदायिक सेवा • पर्यावरण प्रभाव • ज्ञान साझा करना" data-as="সমাজ সেৱা • পৰিৱেশ প্ৰভাৱ • জ্ঞান ভাগ বতৰা" data-ka="लोक सेवा • लेहो प्रभाव • बुथि हागि">Community Service • Environmental Impact • Knowledge Sharing</span>
+                </div>
+            </div>
+            
+            <!-- Footer / Validation -->
+            <div class="footer">
+                <div class="validation-info">
+                    <div class="validation-item">
+                        <div class="validation-name">✓ Mr. Anil Das</div>
+                        <div class="validation-role translate" data-en="Primary Mentor" data-hi="प्राथमिक गुरु" data-as="মূল শিক্ষক" data-ka="मुख्य गुरु">Primary Mentor</div>
+                    </div>
+                    <div class="validation-item">
+                        <div class="validation-name">✓ Ms. Monika Rongmei</div>
+                        <div class="validation-role translate" data-en="Wisdom Keeper" data-hi="ज्ञान रक्षक" data-as="জ্ঞান ৰক্ষক" data-ka="बुथि केदो">Wisdom Keeper</div>
+                    </div>
+                    <div class="validation-item">
+                        <div class="validation-name">✓ Ritu Terang</div>
+                        <div class="validation-role translate" data-en="Peer Mentor" data-hi="साथी गुरु" data-as="সমবয়সীয়া শিক্ষক" data-ka="पेक गुरु">Peer Mentor</div>
+                    </div>
+                    <div class="validation-item">
+                        <div class="validation-name">✓ Mrs. Ronghang</div>
+                        <div class="validation-role translate" data-en="Parent" data-hi="अभिभावक" data-as="পিতৃ-মাতৃ" data-ka="मे-पा">Parent</div>
+                    </div>
+                </div>
+                
+                <div class="qr-section">
+                    <div id="qrcode"></div>
+                    <div class="qr-text">
+                        <strong class="translate" data-en="Blockchain Verified" data-hi="ब्लॉकचेन सत्यापित" data-as="ব্লকচেইন সত্যাপিত" data-ka="ब्लॉकचेन सत्यापित">Blockchain Verified</strong><br>
+                        Document ID: LP-IN-KA-2025-7492-Q2<br>
+                        Validated: June 25, 2025<br>
+                        View full portfolio: lifepassport.uienc.org
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px; font-size: 11px; color: #999; text-align: center;">
+                    <span class="translate" data-en='"This is not a judgment, but a celebration of learning journey"' data-hi='"यह एक निर्णय नहीं, बल्कि सीखने की यात्रा का उत्सव है"' data-as='"এয়া বিচাৰ নহয়, শিক্ষা যাত্ৰাৰ উদযাপন"' data-ka='"नि निर्णय मन, बाङहोन लाम रे उत्सव बोन"'>"This is not a judgment, but a celebration of learning journey"</span><br>
+                    UIENC 2.0 Markless Assessment System | Education 5.0
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 2: DETAILED VIEW -->
+        <div class="card-front page page-break hidden" id="page2">
+            <div class="header">
+                <h1 class="translate" data-en="📋 DETAILED GROWTH ANALYSIS" data-hi="📋 विस्तृत विकास विश्लेषण" data-as="📋 বিস্তৃত বিকাশ বিশ্লেষণ" data-ka="📋 थेरनिबो थेक्लाङ विश्लेषण">📋 DETAILED GROWTH ANALYSIS</h1>
+                <p class="subtitle">Aanya Ronghang | Quarter 2, 2025</p>
+            </div>
+
+            <!-- Key Highlights -->
+            <div class="growth-section">
+                <div class="section-title translate" data-en="✨ Key Highlights & Projects" data-hi="✨ प्रमुख विशेषताएं और परियोजनाएं" data-as="✨ মূল বিশেষত্ব আৰু প্ৰকল্প" data-ka="✨ मुख्य आरो काम">✨ Key Highlights & Projects</div>
+                <div style="padding: 0 15px;">
+                    <ul style="line-height: 1.8; color: #444; font-size: 13px;">
+                        <li><strong>Green Week Initiative:</strong> Led 45 students in community environmental action</li>
+                        <li><strong>Solar Compost System:</strong> Designed working prototype reducing community waste</li>
+                        <li><strong>AI Quiz Game:</strong> Developed educational game used by 23 younger learners</li>
+                        <li><strong>Water Conservation Research:</strong> 12-week study impacting 15 families</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Mentor's Voice -->
+            <div class="reflection-box">
+                <div class="reflection-title translate" data-en="💬 Mentor's Reflection" data-hi="💬 गुरु का चिंतन" data-as="💬 শিক্ষকৰ চিন্তা" data-ka="💬 गुरु रे विचार">💬 Mentor's Reflection</div>
+                <div class="reflection-text">
+                    "Aanya exemplifies Education 5.0 - curiosity, ethics, creativity, and community consciousness working together. This quarter, she evolved from following to leading, initiating projects that engaged her entire community. Her intellectual and ethical growth is remarkable."
+                </div>
+            </div>
+            
+            <!-- Learner's Voice -->
+            <div class="reflection-box" style="background: #fff3e0; border-left-color: #f57c00;">
+                <div class="reflection-title" style="color: #f57c00;" class="translate" data-en="🌟 Learner's Reflection" data-hi="🌟 शिक्षार्थी का चिंतन" data-as="🌟 শিক্ষাৰ্থীৰ চিন্তা" data-ka="🌟 बाङहोदो रे विचार">🌟 Learner's Reflection</div>
+                <div class="reflection-text">
+                    "I'm proud of Green Week because I wasn't sure people would care, but they did! I learned that failure teaches things success doesn't. For next quarter, I want to design water harvesting funnels and get better at public speaking."
+                </div>
+            </div>
+
+            <!-- Detailed Progress Chart -->
+            <div class="growth-section">
+                <div class="section-title translate" data-en="📈 Quarter-wise Progress Tracking" data-hi="📈 तिमाही-वार प्रगति ट्रैकिंग" data-as="📈 ত্ৰৈমাসিক-অনুসৰি অগ্ৰগতি" data-ka="📈 तिमाही केचेत थेक्लाङ">📈 Quarter-wise Progress Tracking</div>
+                <div class="progress-chart">
+                    <div class="chart-item">
+                        <span class="chart-label">Q1 2025</span>
+                        <div class="chart-bar" style="width: 70%;">70%</div>
+                    </div>
+                    <div class="chart-item">
+                        <span class="chart-label">Q2 2025</span>
+                        <div class="chart-bar" style="width: 82%;">82%</div>
+                    </div>
+                    <div class="chart-item">
+                        <span class="chart-label translate" data-en="Growth Trajectory" data-hi="विकास प्रक्षेपवक्र" data-as="বিকাশৰ গতিপথ" data-ka="थेक्लाङ लाम">Growth Trajectory</span>
+                        <div class="chart-bar growth-positive" style="width: 12%;">↑ 12%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Development -->
+            <div class="growth-section">
+                <div class="section-title translate" data-en="🎯 Skills Developed This Quarter" data-hi="🎯 इस तिमाही में विकसित कौशल" data-as="🎯 এই ত্ৰৈমাসিকত বিকশিত দক্ষতা" data-ka="🎯 नि तिमाही रे कौशल">🎯 Skills Developed This Quarter</div>
+                <div class="skills-grid">
+                    <div class="skill-tag">Project Management</div>
+                    <div class="skill-tag">Public Speaking</div>
+                    <div class="skill-tag">AI Programming</div>
+                    <div class="skill-tag">Environmental Design</div>
+                    <div class="skill-tag">Community Organizing</div>
+                    <div class="skill-tag">Research Methods</div>
+                </div>
+            </div>
+
+            <!-- Goals for Next Quarter -->
+            <div class="growth-section">
+                <div class="section-title translate" data-en="🎯 Goals for Next Quarter" data-hi="🎯 अगली तिमाही के लक्ष्य" data-as="🎯 পৰৱৰ্তী ত্ৰৈমাসিকৰ লক্ষ্য" data-ka="🎯 लोनि तिमाही रे लक्ष्य">🎯 Goals for Next Quarter</div>
+                <div style="padding: 0 15px;">
+                    <ul style="line-height: 1.8; color: #444; font-size: 13px;">
+                        <li>Design and prototype rainwater harvesting system for 3 households</li>
+                        <li>Complete advanced Python certification course</li>
+                        <li>Lead community workshop on sustainable living (50+ participants)</li>
+                        <li>Improve public speaking through weekly practice sessions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="print-button no-print" onclick="window.print()">🖨️ Print Card</button>
+    <button class="download-button no-print" onclick="downloadCard()">⬇️ Download as PDF</button>
+    
+    <script src="offline-report-card.js"></script>
+</body>
+</html>
