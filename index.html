@@ -16,8 +16,9 @@
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 </head>
 <body>
+    
     <!-- Header Section -->
-    <header id="main-header">
+    <header id="main-header" class="sticky-header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
@@ -25,8 +26,8 @@
                     <span class="tagline">Enhanced Markless Growth Report Card</span>
                 </div>
                 
-                <nav class="main-nav">
-                    <ul>
+                <nav class="main-nav" id="main-nav">
+                    <ul class="nav-links">
                         <li><a href="#home" class="nav-link active">Home</a></li>
                         <li><a href="#about" class="nav-link">About</a></li>
                         <li><a href="#vision" class="nav-link">Vision</a></li>
@@ -35,17 +36,17 @@
                         <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
                         <li><a href="#get-involved" class="nav-link">Get Involved</a></li>
                     </ul>
+                    
+                    <div class="nav-actions">
+                        <button class="btn-login" onclick="openAuthModal()">Sign In</button>
+                        <button class="btn-register" onclick="scrollToSection('registration')">Sign Up</button>
+                    </div>
                 </nav>
                 
-                <div class="header-actions">
-                    <button class="btn-login" onclick="openAuthModal()">Login</button>
-                    <button class="btn-register" onclick="scrollToSection('registration')">Register</button>
-                </div>
-                
-                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="hamburger-menu" id="hamburger-menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
             </div>
         </div>
