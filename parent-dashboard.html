@@ -19,6 +19,10 @@
     <!-- CSS -->
     <link rel="stylesheet" href="parent-dashboard.css">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -235,6 +239,30 @@
                         <div class="card-body">
                             <div id="progressChart" class="chart-container">
                                 <!-- Chart visualization -->
+                                <div class="chart-placeholder">
+                                    <div class="chart-bars">
+                                        <div class="chart-bar" style="height: 75%">
+                                            <span class="bar-value">75%</span>
+                                            <span class="bar-label">Critical Thinking</span>
+                                        </div>
+                                        <div class="chart-bar" style="height: 85%">
+                                            <span class="bar-value">85%</span>
+                                            <span class="bar-label">Collaboration</span>
+                                        </div>
+                                        <div class="chart-bar" style="height: 65%">
+                                            <span class="bar-value">65%</span>
+                                            <span class="bar-label">Creativity</span>
+                                        </div>
+                                        <div class="chart-bar" style="height: 90%">
+                                            <span class="bar-value">90%</span>
+                                            <span class="bar-label">Communication</span>
+                                        </div>
+                                        <div class="chart-bar" style="height: 70%">
+                                            <span class="bar-value">70%</span>
+                                            <span class="bar-label">Problem Solving</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -246,6 +274,36 @@
                         <div class="card-body">
                             <div id="detailedGrowthAreas" class="detailed-growth-container">
                                 <!-- Detailed growth areas -->
+                                <div class="growth-area">
+                                    <div class="growth-header">
+                                        <h4>Critical Thinking</h4>
+                                        <span class="growth-score">75%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                    <p class="growth-description">Aanya shows strong analytical skills but needs more practice in evaluating complex information sources.</p>
+                                </div>
+                                <div class="growth-area">
+                                    <div class="growth-header">
+                                        <h4>Collaboration</h4>
+                                        <span class="growth-score">85%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 85%"></div>
+                                    </div>
+                                    <p class="growth-description">Excellent team player who actively listens and contributes constructively to group projects.</p>
+                                </div>
+                                <div class="growth-area">
+                                    <div class="growth-header">
+                                        <h4>Creativity</h4>
+                                        <span class="growth-score">65%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 65%"></div>
+                                    </div>
+                                    <p class="growth-description">Shows imaginative approaches but could benefit from exploring more diverse creative techniques.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -260,6 +318,48 @@
                         <div class="card-body">
                             <div id="upcomingActivities" class="activities-list">
                                 <!-- Upcoming activities -->
+                                <div class="activity-item">
+                                    <div class="activity-date">
+                                        <span class="date-day">15</span>
+                                        <span class="date-month">JUL</span>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h4>Community Science Fair</h4>
+                                        <p>Presenting project on sustainable agriculture practices</p>
+                                        <span class="activity-time">10:00 AM - 2:00 PM</span>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <button class="btn btn-small btn-outline">Add to Calendar</button>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-date">
+                                        <span class="date-day">18</span>
+                                        <span class="date-month">JUL</span>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h4>Pod Collaboration Workshop</h4>
+                                        <p>Working with Green Pod on environmental awareness campaign</p>
+                                        <span class="activity-time">1:00 PM - 3:00 PM</span>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <button class="btn btn-small btn-outline">Add to Calendar</button>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-date">
+                                        <span class="date-day">22</span>
+                                        <span class="date-month">JUL</span>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h4>Parent-Teacher Conference</h4>
+                                        <p>Quarterly review of Aanya's progress and goals</p>
+                                        <span class="activity-time">4:00 PM - 5:00 PM</span>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <button class="btn btn-small btn-outline">Add to Calendar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -271,6 +371,48 @@
                         <div class="card-body">
                             <div id="recentActivities" class="activities-list">
                                 <!-- Recent activities -->
+                                <div class="activity-item completed">
+                                    <div class="activity-date">
+                                        <span class="date-day">10</span>
+                                        <span class="date-month">JUL</span>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h4>Mathematics Challenge</h4>
+                                        <p>Completed advanced problem-solving module with 92% score</p>
+                                        <span class="activity-time">Completed</span>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <span class="badge badge-success">Completed</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item completed">
+                                    <div class="activity-date">
+                                        <span class="date-day">08</span>
+                                        <span class="date-month">JUL</span>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h4>Cultural Heritage Project</h4>
+                                        <p>Presented research on Rongmei traditional ecological knowledge</p>
+                                        <span class="activity-time">Completed</span>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <span class="badge badge-success">Completed</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item completed">
+                                    <div class="activity-date">
+                                        <span class="date-day">05</span>
+                                        <span class="date-month">JUL</span>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h4>Creative Writing Workshop</h4>
+                                        <p>Wrote and published a short story in the school magazine</p>
+                                        <span class="activity-time">Completed</span>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <span class="badge badge-success">Completed</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -292,6 +434,36 @@
                         <div class="card-body">
                             <div id="messageHistory" class="message-thread">
                                 <!-- Message history -->
+                                <div class="message-item">
+                                    <div class="message-avatar">AD</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <h4>Mr. Anil Das</h4>
+                                            <span class="message-time">June 28, 2025 • 2:45 PM</span>
+                                        </div>
+                                        <p class="message-text">Aanya has shown remarkable progress in her leadership skills during the community project. She effectively coordinated her team and demonstrated excellent problem-solving abilities.</p>
+                                    </div>
+                                </div>
+                                <div class="message-item user-message">
+                                    <div class="message-avatar">PR</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <h4>You</h4>
+                                            <span class="message-time">June 25, 2025 • 10:30 AM</span>
+                                        </div>
+                                        <p class="message-text">Thank you for the update. We've noticed her increased confidence at home as well. Is there anything specific we can do to support her public speaking goals?</p>
+                                    </div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-avatar">AD</div>
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <h4>Mr. Anil Das</h4>
+                                            <span class="message-time">June 24, 2025 • 4:15 PM</span>
+                                        </div>
+                                        <p class="message-text">Aanya did an excellent presentation today on her environmental project. Her research was thorough and she communicated her findings clearly. We're working on building her confidence for larger audiences.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -306,6 +478,38 @@
                         <div class="card-body">
                             <div id="resourcesList" class="resources-grid">
                                 <!-- Resources -->
+                                <div class="resource-card">
+                                    <div class="resource-icon">
+                                        <i data-lucide="book-open"></i>
+                                    </div>
+                                    <h4>Supporting Holistic Learning</h4>
+                                    <p>Guide to fostering creativity, critical thinking, and collaboration at home</p>
+                                    <button class="btn btn-small btn-outline">Download PDF</button>
+                                </div>
+                                <div class="resource-card">
+                                    <div class="resource-icon">
+                                        <i data-lucide="users"></i>
+                                    </div>
+                                    <h4>Parent Community Guide</h4>
+                                    <p>How to engage with other parents and support the learning community</p>
+                                    <button class="btn btn-small btn-outline">Download PDF</button>
+                                </div>
+                                <div class="resource-card">
+                                    <div class="resource-icon">
+                                        <i data-lucide="monitor"></i>
+                                    </div>
+                                    <h4>Digital Learning Tools</h4>
+                                    <p>Overview of platforms and tools used in your child's learning journey</p>
+                                    <button class="btn btn-small btn-outline">Download PDF</button>
+                                </div>
+                                <div class="resource-card">
+                                    <div class="resource-icon">
+                                        <i data-lucide="award"></i>
+                                    </div>
+                                    <h4>Understanding Assessment</h4>
+                                    <p>How we measure growth and development in our holistic model</p>
+                                    <button class="btn btn-small btn-outline">Download PDF</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -381,7 +585,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="i18n.js"></script>
     <script src="parent-dashboard.js"></script>
     
     <!-- PWA Registration -->
