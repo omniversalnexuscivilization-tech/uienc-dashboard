@@ -567,19 +567,34 @@ section {
    ============================================ */
 .about-section {
     background: var(--bg-gray);
+    overflow: hidden;
 }
 
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-2xl);
-    align-items: center;
+    align-items: start;
+}
+
+.about-content {
+    background: var(--bg-light);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--border-light);
+    box-shadow: var(--shadow-medium);
 }
 
 .about-content h3 {
     color: var(--midnight-blue);
-    font-size: 2.25rem;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
     margin-bottom: var(--spacing-md);
+}
+
+.about-content .lead-text {
+    color: var(--text-slate);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
 }
 
 .about-stats {
@@ -592,7 +607,7 @@ section {
 .stat {
     text-align: center;
     padding: var(--spacing-lg);
-    background: var(--bg-light);
+    background: var(--bg-gray);
     border-radius: var(--radius-md);
     border: 1px solid var(--border-light);
     transition: all var(--transition-normal);
@@ -601,11 +616,12 @@ section {
 .stat:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-medium);
+    border-color: var(--cosmic-purple);
 }
 
 .stat-number {
     display: block;
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
     background: var(--gradient-cosmic);
     -webkit-background-clip: text;
@@ -613,13 +629,15 @@ section {
     background-clip: text;
     margin-bottom: var(--spacing-xs);
     font-family: var(--font-heading);
+    line-height: 1;
 }
 
 .stat-label {
     display: block;
     color: var(--text-medium);
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     font-weight: 500;
+    line-height: 1.4;
 }
 
 .about-features {
@@ -633,7 +651,7 @@ section {
     align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-md);
-    background: var(--bg-light);
+    background: var(--bg-gray);
     border-radius: var(--radius-md);
     border: 1px solid var(--border-light);
     transition: all var(--transition-fast);
@@ -642,12 +660,14 @@ section {
 .feature-item:hover {
     border-color: var(--cyan-neon);
     transform: translateX(8px);
+    background: rgba(0, 255, 255, 0.05);
 }
 
 .feature-check {
     font-size: 1.5rem;
     font-weight: 700;
     flex-shrink: 0;
+    line-height: 1;
 }
 
 .feature-check.cyan {
@@ -659,20 +679,24 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: var(--spacing-xl);
+    position: relative;
 }
 
 .intelligence-mandala {
     position: relative;
-    width: 450px;
-    height: 450px;
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .mandala-center {
-    width: 140px;
-    height: 140px;
+    width: clamp(100px, 30%, 140px);
+    height: clamp(100px, 30%, 140px);
     background: var(--gradient-cosmic);
     border-radius: 50%;
     display: flex;
@@ -680,11 +704,13 @@ section {
     justify-content: center;
     text-align: center;
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: clamp(0.9rem, 2vw, 1.125rem);
     color: var(--text-white);
     z-index: 2;
     box-shadow: var(--shadow-cosmic);
     position: relative;
+    line-height: 1.3;
+    padding: var(--spacing-sm);
 }
 
 .center-glow {
@@ -715,8 +741,8 @@ section {
 
 .intelligence-node {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: clamp(75px, 22%, 100px);
+    height: clamp(75px, 22%, 100px);
     background: var(--bg-light);
     border: 3px solid var(--cosmic-purple);
     border-radius: 50%;
@@ -726,7 +752,7 @@ section {
     justify-content: center;
     gap: var(--spacing-xs);
     text-align: center;
-    padding: var(--spacing-sm);
+    padding: var(--spacing-xs);
     transition: all var(--transition-normal);
     cursor: pointer;
     box-shadow: var(--shadow-medium);
@@ -750,13 +776,20 @@ section {
     z-index: 3;
 }
 
+.intelligence-node:nth-child(1):hover { transform: translateX(-50%) scale(1.15); }
+.intelligence-node:nth-child(3):hover { transform: translateY(-50%) scale(1.15); }
+.intelligence-node:nth-child(5):hover { transform: translateX(-50%) scale(1.15); }
+.intelligence-node:nth-child(7):hover { transform: translateY(-50%) scale(1.15); }
+
 .node-icon {
-    font-size: 1.75rem;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    line-height: 1;
 }
 
 .node-label {
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
     font-weight: 600;
+    line-height: 1.2;
 }
 
 /* Continue with remaining sections... (Registration, Dashboard, Portfolio, etc.) */
@@ -1907,4 +1940,4 @@ section {
     
     .intelligence-mandala {
         width:
-            
+           
