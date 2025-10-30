@@ -3,50 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UIENC 2.0 - Enhanced Markless Growth Report Card</title>
+    <meta name="description" content="UIENC 2.0 - Enhanced Markless Growth Report Card System | Education 5.0 for Civilization 3.0">
+    <meta name="keywords" content="Education 5.0, Civilization 3.0, Holistic Learning, Markless Assessment, Human Unity">
+    <title>UIENC 2.0 - Education 5.0 for New World Civilization</title>
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="global-style.css">
     <link rel="stylesheet" href="body-styles.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 </head>
 <body>
-    
     <!-- Header Section -->
-    <header id="main-header" class="sticky-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <h1>UIENC <span class="version">2.0</span></h1>
-                    <span class="tagline">Enhanced Markless Growth Report Card</span>
+    <header id="main-header" class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🌍</span>
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">UIENC 2.0</span>
+                    <span class="logo-tagline">Education 5.0</span>
                 </div>
-                
-                <nav class="main-nav" id="main-nav">
-                    <ul class="nav-links">
-                        <li><a href="#home" class="nav-link active">Home</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#vision" class="nav-link">Vision</a></li>
-                        <li><a href="#mission" class="nav-link">Mission</a></li>
-                        <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
-                        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                        <li><a href="#get-involved" class="nav-link">Get Involved</a></li>
-                    </ul>
-                    
-                    <div class="nav-actions">
-                        <button class="btn-login" onclick="openAuthModal()">Sign In</button>
-                        <button class="btn-register" onclick="scrollToSection('registration')">Sign Up</button>
-                    </div>
-                </nav>
-                
-                <button class="hamburger-menu" id="hamburger-menu">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
+            </div>
+            
+            <nav class="main-nav" id="mainNav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#vision" class="nav-link">Vision</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#pillars" class="nav-link">Three Pillars</a>
+                <a href="#registration" class="nav-link">Register</a>
+                <a href="#dashboard" class="nav-link">Dashboard</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#community" class="nav-link">Community</a>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="btn-secondary" onclick="openAuthModal()">Sign In</button>
+                <button class="btn-primary" onclick="scrollToSection('registration')">Join Movement</button>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
@@ -54,53 +54,214 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section - Dark Cosmic Gradient -->
         <section id="home" class="hero-section">
             <div class="hero-background">
+                <div class="cosmic-waves"></div>
                 <div class="floating-shapes">
                     <div class="shape shape-1"></div>
                     <div class="shape shape-2"></div>
                     <div class="shape shape-3"></div>
                     <div class="shape shape-4"></div>
-                    <div class="shape shape-5"></div>
+                    <div class="particle-field"></div>
                 </div>
             </div>
             
             <div class="container">
                 <div class="hero-content">
+                    <div class="vision-quote">
+                        <span class="quote-icon">✨</span>
+                        <p>"One Earth. One Species. One Ethic."</p>
+                    </div>
+                    
                     <h1 class="hero-title">
-                        <span class="gradient-text">UIENC 2.0</span>
+                        <span class="gradient-text-cosmic">UIENC 2.0</span>
                         <span class="hero-subtitle">Enhanced Markless Growth Report Card</span>
+                        <span class="hero-vision">Education 5.0 for Civilization 3.0</span>
                     </h1>
                     
                     <p class="hero-description">
-                        Holistic Learning Documentation System for the 21st Century - 
-                        Where every child's unique potential is recognized beyond conventional metrics
+                        A revolutionary learning documentation system that transcends traditional grades,
+                        integrating scientific rationalism, humanistic values, and universal cooperation
+                        to nurture conscious, compassionate global citizens.
                     </p>
                     
+                    <div class="hero-principles">
+                        <div class="principle-badge">
+                            <span class="badge-icon">🧬</span>
+                            <span>Scientific Rationalism</span>
+                        </div>
+                        <div class="principle-badge">
+                            <span class="badge-icon">❤️</span>
+                            <span>Humanistic Values</span>
+                        </div>
+                        <div class="principle-badge">
+                            <span class="badge-icon">🌐</span>
+                            <span>Universal Cooperation</span>
+                        </div>
+                    </div>
+                    
                     <div class="hero-features">
-                        <div class="feature-card">
+                        <div class="feature-card cosmic-card">
                             <div class="feature-icon">🌱</div>
                             <h3>Growth Without Grades</h3>
-                            <p>Multi-dimensional assessment beyond traditional marks</p>
+                            <p>Multi-dimensional assessment beyond conventional metrics</p>
                         </div>
                         
-                        <div class="feature-card">
+                        <div class="feature-card cosmic-card">
                             <div class="feature-icon">🤝</div>
                             <h3>Community Validation</h3>
-                            <p>Multi-stakeholder feedback and recognition</p>
+                            <p>Multi-stakeholder feedback and collective recognition</p>
                         </div>
                         
-                        <div class="feature-card">
+                        <div class="feature-card cosmic-card">
                             <div class="feature-icon">🔗</div>
                             <h3>Blockchain Verified</h3>
-                            <p>Secure, immutable learning credentials</p>
+                            <p>Secure, immutable, transparent learning credentials</p>
                         </div>
                     </div>
                     
                     <div class="hero-cta">
-                        <button class="cta-primary" onclick="scrollToSection('registration')">Start Your Journey</button>
-                        <button class="cta-secondary" onclick="scrollToSection('about')">Learn More</button>
+                        <button class="cta-primary glow-effect" onclick="scrollToSection('registration')">
+                            <span>Start Your Journey</span>
+                            <span class="cta-arrow">→</span>
+                        </button>
+                        <button class="cta-secondary cosmic-border" onclick="scrollToSection('vision')">
+                            <span>Explore Vision</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Transition Divider -->
+            <div class="section-divider dark-to-light"></div>
+        </section>
+
+        <!-- Vision Section - Transition Zone -->
+        <section id="vision" class="vision-section transition-zone">
+            <div class="container">
+                <div class="vision-header">
+                    <span class="section-label">Our Guiding Light</span>
+                    <h2 class="section-title cosmic-gradient">Vision for New World Civilization</h2>
+                    <p class="section-intro">
+                        From the depths of cosmic darkness to the brilliance of enlightened humanity—
+                        a journey from ignorance to knowledge, separation to unity.
+                    </p>
+                </div>
+                
+                <div class="vision-statement-card">
+                    <div class="statement-content">
+                        <div class="quote-mark">"</div>
+                        <p class="main-statement">
+                            To replace competitive grading with collaborative growth documentation,
+                            creating learning environments where children develop as whole human beings—
+                            scientifically literate, ethically grounded, and universally connected.
+                        </p>
+                        <div class="statement-author">
+                            <span class="author-name">— Shivanta Ronghang</span>
+                            <span class="author-title">Founder, Education 5.0 Initiative</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="vision-cards-grid">
+                    <div class="vision-card light-card">
+                        <div class="card-glow"></div>
+                        <div class="vision-icon">🌟</div>
+                        <h3>Transformative Education</h3>
+                        <p>
+                            Creating learning ecosystems where every child's unique potential 
+                            is recognized, nurtured, and celebrated beyond conventional metrics—
+                            fostering critical thinking, creativity, and consciousness.
+                        </p>
+                    </div>
+                    
+                    <div class="vision-card light-card">
+                        <div class="card-glow"></div>
+                        <div class="vision-icon">🌍</div>
+                        <h3>Global yet Rooted</h3>
+                        <p>
+                            Bridging indigenous knowledge systems with global scientific competencies
+                            to create culturally responsive, future-ready learners who honor heritage
+                            while embracing universal human values.
+                        </p>
+                    </div>
+                    
+                    <div class="vision-card light-card">
+                        <div class="card-glow"></div>
+                        <div class="vision-icon">🤲</div>
+                        <h3>Community-Centered</h3>
+                        <p>
+                            Building assessment systems that serve communities, honor collective wisdom,
+                            and foster intergenerational learning—replacing isolation with interconnection,
+                            competition with collaboration.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Three Pillars Section - White/Light Background -->
+        <section id="pillars" class="pillars-section">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-label cyan-label">Foundation of Civilization 3.0</span>
+                    <h2 class="section-title navy-text">The Three Pillars</h2>
+                    <p class="section-subtitle">
+                        Building a new world civilization on the foundation of science, humanity, and unity
+                    </p>
+                </div>
+                
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <div class="pillar-number">01</div>
+                        <div class="pillar-icon-large">🔬</div>
+                        <h3>Scientific Humanism</h3>
+                        <div class="pillar-divider"></div>
+                        <p>
+                            Grounding education in evidence-based knowledge, critical inquiry, and rational thinking—
+                            while recognizing the profound interconnection between all life forms.
+                        </p>
+                        <ul class="pillar-features">
+                            <li><span class="check-icon">✓</span> Evidence-based learning</li>
+                            <li><span class="check-icon">✓</span> Critical thinking skills</li>
+                            <li><span class="check-icon">✓</span> Ecological consciousness</li>
+                            <li><span class="check-icon">✓</span> Systems thinking approach</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pillar-card featured-pillar">
+                        <div class="pillar-number">02</div>
+                        <div class="pillar-icon-large">❤️</div>
+                        <h3>Ethical Rationalism</h3>
+                        <div class="pillar-divider"></div>
+                        <p>
+                            Cultivating compassion, empathy, and ethical decision-making rooted in reason—
+                            transcending dogma to embrace universal human dignity and planetary wellbeing.
+                        </p>
+                        <ul class="pillar-features">
+                            <li><span class="check-icon">✓</span> Empathy development</li>
+                            <li><span class="check-icon">✓</span> Ethical reasoning</li>
+                            <li><span class="check-icon">✓</span> Post-dogmatic wisdom</li>
+                            <li><span class="check-icon">✓</span> Compassionate action</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pillar-card">
+                        <div class="pillar-number">03</div>
+                        <div class="pillar-icon-large">🌐</div>
+                        <h3>Universal Cooperation</h3>
+                        <div class="pillar-divider"></div>
+                        <p>
+                            Fostering global citizenship and collaborative problem-solving—
+                            recognizing that humanity's challenges require collective wisdom and unified action.
+                        </p>
+                        <ul class="pillar-features">
+                            <li><span class="check-icon">✓</span> Global citizenship</li>
+                            <li><span class="check-icon">✓</span> Collaborative learning</li>
+                            <li><span class="check-icon">✓</span> Cross-cultural dialogue</li>
+                            <li><span class="check-icon">✓</span> Planetary stewardship</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -109,20 +270,23 @@
         <!-- About Section -->
         <section id="about" class="about-section">
             <div class="container">
-                <h2 class="section-title">About UIENC 2.0</h2>
+                <div class="section-header-center">
+                    <span class="section-label violet-label">Understanding UIENC 2.0</span>
+                    <h2 class="section-title navy-text">Revolutionizing Learning Assessment</h2>
+                </div>
                 
                 <div class="about-grid">
                     <div class="about-content">
-                        <h3>Revolutionizing Learning Assessment</h3>
-                        <p>
+                        <h3>Beyond Marks, Toward Meaning</h3>
+                        <p class="lead-text">
                             UIENC 2.0 is a comprehensive, markless evaluation system that documents 
-                            holistic growth across multiple intelligences, integrating indigenous wisdom 
-                            with modern educational frameworks.
+                            holistic growth across multiple intelligences—integrating indigenous wisdom 
+                            with modern educational frameworks and scientific understanding.
                         </p>
                         
                         <div class="about-stats">
                             <div class="stat">
-                                <span class="stat-number">7+</span>
+                                <span class="stat-number">8+</span>
                                 <span class="stat-label">Intelligences Tracked</span>
                             </div>
                             <div class="stat">
@@ -130,297 +294,77 @@
                                 <span class="stat-label">Markless Assessment</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-number">🌍</span>
-                                <span class="stat-label">Global & Local</span>
+                                <span class="stat-number">∞</span>
+                                <span class="stat-label">Growth Potential</span>
                             </div>
                         </div>
                         
                         <div class="about-features">
                             <div class="feature-item">
-                                <span class="feature-check">✓</span>
+                                <span class="feature-check cyan">✓</span>
                                 <span>Personalized Learning Pathways</span>
                             </div>
                             <div class="feature-item">
-                                <span class="feature-check">✓</span>
+                                <span class="feature-check cyan">✓</span>
                                 <span>Indigenous Knowledge Integration</span>
                             </div>
                             <div class="feature-item">
-                                <span class="feature-check">✓</span>
+                                <span class="feature-check cyan">✓</span>
                                 <span>Community-Based Validation</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check cyan">✓</span>
+                                <span>Blockchain-Verified Credentials</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check cyan">✓</span>
+                                <span>Multi-Stakeholder Feedback</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check cyan">✓</span>
+                                <span>Holistic Growth Documentation</span>
                             </div>
                         </div>
                     </div>
                     
                     <div class="about-visual">
-                        <div class="intelligence-wheel">
-                            <div class="wheel-center">
-                                <span>Holistic Growth</span>
+                        <div class="intelligence-mandala">
+                            <div class="mandala-center">
+                                <div class="center-glow"></div>
+                                <span>Holistic<br>Growth</span>
                             </div>
-                            <div class="wheel-item" style="--angle: 0deg">
-                                <span>Logical</span>
-                            </div>
-                            <div class="wheel-item" style="--angle: 45deg">
-                                <span>Creative</span>
-                            </div>
-                            <div class="wheel-item" style="--angle: 90deg">
-                                <span>Emotional</span>
-                            </div>
-                            <div class="wheel-item" style="--angle: 135deg">
-                                <span>Social</span>
-                            </div>
-                            <div class="wheel-item" style="--angle: 180deg">
-                                <span>Physical</span>
-                            </div>
-                            <div class="wheel-item" style="--angle: 225deg">
-                                <span>Naturalist</span>
-                            </div>
-                            <div class="wheel-item" style="--angle: 270deg">
-                                <span>Spiritual</span>
-                            </div>
-                            <div class="wheel-item" style="--angle: 315deg">
-                                <span>Cultural</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Vision Section -->
-        <section id="vision" class="vision-section">
-            <div class="container">
-                <h2 class="section-title">Our Vision</h2>
-                
-                <div class="vision-content">
-                    <div class="vision-card">
-                        <div class="vision-icon">🌟</div>
-                        <h3>Transformative Education</h3>
-                        <p>
-                            Creating learning ecosystems where every child's unique potential 
-                            is recognized, nurtured, and celebrated beyond conventional metrics.
-                        </p>
-                    </div>
-                    
-                    <div class="vision-card">
-                        <div class="vision-icon">🌍</div>
-                        <h3>Global yet Rooted</h3>
-                        <p>
-                            Bridging indigenous knowledge systems with global competencies 
-                            to create culturally responsive, future-ready learners.
-                        </p>
-                    </div>
-                    
-                    <div class="vision-card">
-                        <div class="vision-icon">🤲</div>
-                        <h3>Community-Centered</h3>
-                        <p>
-                            Building assessment systems that serve communities, honor local wisdom, 
-                            and foster intergenerational learning.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mission Section -->
-        <section id="mission" class="mission-section">
-            <div class="container">
-                <h2 class="section-title">Mission & Objectives</h2>
-                
-                <div class="mission-grid">
-                    <div class="mission-main">
-                        <h3>Core Mission</h3>
-                        <p class="mission-statement">
-                            "To replace competitive grading with collaborative growth documentation, 
-                            creating learning environments where children develop as whole human beings 
-                            connected to their communities and ecosystems."
-                        </p>
-                    </div>
-                    
-                    <div class="objectives-list">
-                        <h4>Key Objectives</h4>
-                        <ul class="objectives">
-                            <li>
-                                <span class="objective-icon">📊</span>
-                                Document holistic development across 7+ intelligences
-                            </li>
-                            <li>
-                                <span class="objective-icon">🤝</span>
-                                Integrate multi-stakeholder feedback systems
-                            </li>
-                            <li>
-                                <span class="objective-icon">🌱</span>
-                                Center indigenous and local knowledge systems
-                            </li>
-                            <li>
-                                <span class="objective-icon">🔗</span>
-                                Implement blockchain-verified learning credentials
-                            </li>
-                            <li>
-                                <span class="objective-icon">🎯</span>
-                                Foster self-directed learning pathways
-                            </li>
-                            <li>
-                                <span class="objective-icon">🌍</span>
-                                Build global learning communities
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Dashboard Preview Section -->
-        <section id="dashboard" class="dashboard-section">
-            <div class="container">
-                <h2 class="section-title">Interactive Dashboards</h2>
-                <p class="section-subtitle">Personalized insights for every stakeholder</p>
-                
-                <div class="dashboard-preview">
-                    <div class="dashboard-cards">
-                        <div class="dashboard-card">
-                            <div class="card-header">
-                                <div class="card-icon">👨‍🎓</div>
-                                <h3>Learner Dashboard</h3>
-                            </div>
-                            <div class="card-content">
-                                <div class="progress-ring">
-                                    <svg width="120" height="120">
-                                        <circle class="progress-ring-bg" cx="60" cy="60" r="54"></circle>
-                                        <circle class="progress-ring-circle" cx="60" cy="60" r="54" style="stroke-dashoffset: 339.292;"></circle>
-                                    </svg>
-                                    <div class="progress-text">
-                                        <span class="progress-percent">75%</span>
-                                        <span class="progress-label">Learning Path</span>
-                                    </div>
+                            <div class="mandala-ring">
+                                <div class="intelligence-node" data-intelligence="Logical">
+                                    <span class="node-icon">🧮</span>
+                                    <span class="node-label">Logical</span>
                                 </div>
-                                <div class="dashboard-stats">
-                                    <div class="stat">
-                                        <span class="stat-value">12</span>
-                                        <span class="stat-label">Projects</span>
-                                    </div>
-                                    <div class="stat">
-                                        <span class="stat-value">8</span>
-                                        <span class="stat-label">Skills</span>
-                                    </div>
-                                    <div class="stat">
-                                        <span class="stat-value">15</span>
-                                        <span class="stat-label">Badges</span>
-                                    </div>
+                                <div class="intelligence-node" data-intelligence="Creative">
+                                    <span class="node-icon">🎨</span>
+                                    <span class="node-label">Creative</span>
                                 </div>
-                            </div>
-                            <div class="card-actions">
-                                <a href="dashboard-learners.html" class="btn-dashboard">Explore Full Dashboard</a>
-                            </div>
-                        </div>
-                        
-                        <div class="dashboard-card">
-                            <div class="card-header">
-                                <div class="card-icon">👨‍🏫</div>
-                                <h3>Mentor Dashboard</h3>
-                            </div>
-                            <div class="card-content">
-                                <div class="mentor-stats">
-                                    <div class="mentor-stat">
-                                        <span class="stat-value">24</span>
-                                        <span class="stat-label">Learners</span>
-                                    </div>
-                                    <div class="mentor-stat">
-                                        <span class="stat-value">7</span>
-                                        <span class="stat-label">Learning Pods</span>
-                                    </div>
-                                    <div class="mentor-stat">
-                                        <span class="stat-value">18</span>
-                                        <span class="stat-label">Sessions</span>
-                                    </div>
+                                <div class="intelligence-node" data-intelligence="Emotional">
+                                    <span class="node-icon">💝</span>
+                                    <span class="node-label">Emotional</span>
                                 </div>
-                                <div class="mentor-progress">
-                                    <h4>Recent Feedback</h4>
-                                    <div class="feedback-item">
-                                        <div class="feedback-rating">
-                                            <span class="star filled">★</span>
-                                            <span class="star filled">★</span>
-                                            <span class="star filled">★</span>
-                                            <span class="star filled">★</span>
-                                            <span class="star">★</span>
-                                        </div>
-                                        <p>"Great guidance on the biomimicry project"</p>
-                                    </div>
+                                <div class="intelligence-node" data-intelligence="Social">
+                                    <span class="node-icon">🤝</span>
+                                    <span class="node-label">Social</span>
                                 </div>
-                            </div>
-                            <div class="card-actions">
-                                <a href="mentor-dashboard.html" class="btn-dashboard">Explore Full Dashboard</a>
-                            </div>
-                        </div>
-                        
-                        <div class="dashboard-card">
-                            <div class="card-header">
-                                <div class="card-icon">👨‍👩‍👧‍👦</div>
-                                <h3>Parent Dashboard</h3>
-                            </div>
-                            <div class="card-content">
-                                <div class="child-progress">
-                                    <h4>Child Progress</h4>
-                                    <div class="progress-bars">
-                                        <div class="progress-bar">
-                                            <div class="progress-label">Logical Thinking</div>
-                                            <div class="progress-track">
-                                                <div class="progress-fill" style="width: 80%"></div>
-                                            </div>
-                                            <div class="progress-value">80%</div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="progress-label">Creative Expression</div>
-                                            <div class="progress-track">
-                                                <div class="progress-fill" style="width: 95%"></div>
-                                            </div>
-                                            <div class="progress-value">95%</div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="progress-label">Social Skills</div>
-                                            <div class="progress-track">
-                                                <div class="progress-fill" style="width: 70%"></div>
-                                            </div>
-                                            <div class="progress-value">70%</div>
-                                        </div>
-                                    </div>
+                                <div class="intelligence-node" data-intelligence="Physical">
+                                    <span class="node-icon">🏃</span>
+                                    <span class="node-label">Physical</span>
                                 </div>
-                            </div>
-                            <div class="card-actions">
-                                <a href="parent-dashboard.html" class="btn-dashboard">Explore Full Dashboard</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="dashboard-features">
-                        <h3>Dashboard Features</h3>
-                        <div class="features-list">
-                            <div class="feature">
-                                <span class="feature-icon">📊</span>
-                                <div class="feature-content">
-                                    <h4>Real-time Analytics</h4>
-                                    <p>Track progress across multiple intelligences with interactive charts</p>
+                                <div class="intelligence-node" data-intelligence="Naturalist">
+                                    <span class="node-icon">🌿</span>
+                                    <span class="node-label">Naturalist</span>
                                 </div>
-                            </div>
-                            <div class="feature">
-                                <span class="feature-icon">📱</span>
-                                <div class="feature-content">
-                                    <h4>Mobile Responsive</h4>
-                                    <p>Access your dashboard from any device, anywhere</p>
+                                <div class="intelligence-node" data-intelligence="Spiritual">
+                                    <span class="node-icon">🧘</span>
+                                    <span class="node-label">Spiritual</span>
                                 </div>
-                            </div>
-                            <div class="feature">
-                                <span class="feature-icon">🔔</span>
-                                <div class="feature-content">
-                                    <h4>Smart Notifications</h4>
-                                    <p>Get alerts for important milestones and upcoming events</p>
-                                </div>
-                            </div>
-                            <div class="feature">
-                                <span class="feature-icon">📥</span>
-                                <div class="feature-content">
-                                    <h4>Export Reports</h4>
-                                    <p>Download detailed PDF reports of learning progress</p>
+                                <div class="intelligence-node" data-intelligence="Cultural">
+                                    <span class="node-icon">🌏</span>
+                                    <span class="node-label">Cultural</span>
                                 </div>
                             </div>
                         </div>
@@ -432,339 +376,626 @@
         <!-- Registration Section -->
         <section id="registration" class="registration-section">
             <div class="container">
-                <h2 class="section-title">Join the UIENC 2.0 Community</h2>
-                <p class="section-subtitle">Choose your role and start your journey</p>
-                
-                <div class="registration-tabs">
-                    <button class="tab-btn active" data-tab="learner">As a Learner</button>
-                    <button class="tab-btn" data-tab="mentor">As a Mentor</button>
-                    <button class="tab-btn" data-tab="parent">As a Parent/Guardian</button>
-                    <button class="tab-btn" data-tab="community">Community Partner</button>
+                <div class="section-header-center">
+                    <span class="section-label cosmic-label">Join the Movement</span>
+                    <h2 class="section-title navy-text">Become Part of Civilization 3.0</h2>
+                    <p class="section-subtitle">
+                        Register through our integrated Google Forms system
+                    </p>
                 </div>
                 
-                <div class="registration-content">
-                    <form class="registration-form active" id="learner-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfYOUR_GOOGLE_FORM_ID_HERE/formResponse" method="POST" target="hidden_iframe">
-                        <div class="form-group">
-                            <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" name="entry.123456789" required>
+                <div class="registration-info-card">
+                    <div class="info-icon">📝</div>
+                    <p>Your information will be automatically saved to Google Sheets and securely stored in Google Drive</p>
+                </div>
+                
+                <div class="registration-options">
+                    <div class="registration-card">
+                        <div class="card-header">
+                            <div class="reg-icon">👨‍🎓</div>
+                            <h3>Learner Registration</h3>
                         </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="entry.987654321" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="entry.555555555">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="ageGroup">Age Group *</label>
-                            <select id="ageGroup" name="entry.444444444" required>
-                                <option value="">Select age group</option>
-                                <option value="5-10">5-10 years</option>
-                                <option value="11-14">11-14 years</option>
-                                <option value="15-18">15-18 years</option>
-                                <option value="19-25">19-25 years</option>
-                                <option value="25+">25+ years</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="location">Location *</label>
-                            <input type="text" id="location" name="entry.333333333" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Areas of Interest</label>
-                            <div class="interest-tags">
-                                <label class="tag-option">
-                                    <input type="checkbox" name="entry.222222222" value="eco-literacy">
-                                    <span>Eco-Literacy</span>
-                                </label>
-                                <label class="tag-option">
-                                    <input type="checkbox" name="entry.222222222" value="indigenous-knowledge">
-                                    <span>Indigenous Knowledge</span>
-                                </label>
-                                <label class="tag-option">
-                                    <input type="checkbox" name="entry.222222222" value="technology">
-                                    <span>Technology & AI</span>
-                                </label>
-                                <label class="tag-option">
-                                    <input type="checkbox" name="entry.222222222" value="arts">
-                                    <span>Arts & Creativity</span>
-                                </label>
-                                <label class="tag-option">
-                                    <input type="checkbox" name="entry.222222222" value="leadership">
-                                    <span>Community Leadership</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Create Account</button>
-                    </form>
+                        <p>Start your personalized learning journey with UIENC 2.0</p>
+                        <ul class="reg-benefits">
+                            <li>Holistic growth tracking</li>
+                            <li>Personalized learning path</li>
+                            <li>Community support network</li>
+                            <li>Blockchain credentials</li>
+                        </ul>
+                        <a href="https://forms.gle/YOUR_LEARNER_FORM_ID" target="_blank" class="reg-btn">
+                            <span>Register as Learner</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
                     
-                    <div class="form-success" id="form-success" style="display: none;">
-                        <div class="success-icon">✅</div>
-                        <h3>Registration Successful!</h3>
-                        <p>Thank you for joining the UIENC 2.0 community. We'll contact you shortly with next steps.</p>
-                        <button class="btn-primary" onclick="closeSuccessMessage()">Continue Exploring</button>
+                    <div class="registration-card">
+                        <div class="card-header">
+                            <div class="reg-icon">👨‍🏫</div>
+                            <h3>Mentor Registration</h3>
+                        </div>
+                        <p>Guide and support learners in their transformative journey</p>
+                        <ul class="reg-benefits">
+                            <li>Mentor training program</li>
+                            <li>Access to resources</li>
+                            <li>Collaborative network</li>
+                            <li>Impact recognition</li>
+                        </ul>
+                        <a href="https://forms.gle/YOUR_MENTOR_FORM_ID" target="_blank" class="reg-btn">
+                            <span>Register as Mentor</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                    
+                    <div class="registration-card">
+                        <div class="card-header">
+                            <div class="reg-icon">👨‍👩‍👧</div>
+                            <h3>Parent/Guardian</h3>
+                        </div>
+                        <p>Support and track your child's holistic development</p>
+                        <ul class="reg-benefits">
+                            <li>Progress monitoring</li>
+                            <li>Regular updates</li>
+                            <li>Parent community</li>
+                            <li>Consultation access</li>
+                        </ul>
+                        <a href="https://forms.gle/YOUR_PARENT_FORM_ID" target="_blank" class="reg-btn">
+                            <span>Register as Parent</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                    
+                    <div class="registration-card featured-card">
+                        <div class="featured-badge">Featured</div>
+                        <div class="card-header">
+                            <div class="reg-icon">🤝</div>
+                            <h3>Community Partner</h3>
+                        </div>
+                        <p>Collaborate to create transformative learning ecosystems</p>
+                        <ul class="reg-benefits">
+                            <li>Custom implementation</li>
+                            <li>Training & resources</li>
+                            <li>Co-creation opportunities</li>
+                            <li>Network expansion</li>
+                        </ul>
+                        <a href="https://forms.gle/YOUR_PARTNER_FORM_ID" target="_blank" class="reg-btn">
+                            <span>Become a Partner</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="dashboard-section">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-label violet-label">Track Your Progress</span>
+                    <h2 class="section-title navy-text">Access Your Dashboard</h2>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="dash-header">
+                            <div class="dash-icon">👨‍🎓</div>
+                            <h3>Learner Dashboard</h3>
+                        </div>
+                        <p>Track your learning journey, projects, and growth across multiple intelligences</p>
+                        <div class="dash-features">
+                            <span class="feature-badge">Growth Tracking</span>
+                            <span class="feature-badge">Project Portfolio</span>
+                            <span class="feature-badge">Peer Network</span>
+                        </div>
+                        <a href="learner-dashboard.html" class="dash-btn">
+                            <span>Explore Dashboard</span>
+                            <span class="btn-icon">→</span>
+                        </a>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="dash-header">
+                            <div class="dash-icon">👨‍🏫</div>
+                            <h3>Mentor Dashboard</h3>
+                        </div>
+                        <p>Monitor mentee progress, provide feedback, and manage learning communities</p>
+                        <div class="dash-features">
+                            <span class="feature-badge">Mentee Progress</span>
+                            <span class="feature-badge">Feedback Tools</span>
+                            <span class="feature-badge">Pod Management</span>
+                        </div>
+                        <a href="mentor-dashboard.html" class="dash-btn">
+                            <span>Explore Dashboard</span>
+                            <span class="btn-icon">→</span>
+                        </a>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="dash-header">
+                            <div class="dash-icon">👨‍👩‍👧</div>
+                            <h3>Parent Dashboard</h3>
+                        </div>
+                        <p>View your child's holistic development and communicate with mentors</p>
+                        <div class="dash-features">
+                            <span class="feature-badge">Child Progress</span>
+                            <span class="feature-badge">Communication</span>
+                            <span class="feature-badge">Reports</span>
+                        </div>
+                        <a href="parent-dashboard.html" class="dash-btn">
+                            <span>Explore Dashboard</span>
+                            <span class="btn-icon">→</span>
+                        </a>
                     </div>
                 </div>
                 
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                <div class="dashboard-preview-card">
+                    <h3>Upcoming Learning Circles</h3>
+                    <div class="events-timeline">
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="date-day">15</span>
+                                <span class="date-month">Jun</span>
+                            </div>
+                            <div class="event-content">
+                                <h4>Monsoon Water Harvesting Workshop</h4>
+                                <p class="event-meta">
+                                    <span class="event-time">⏰ 2:00 PM - 4:00 PM</span>
+                                    <span class="event-location">📍 Community Center</span>
+                                </p>
+                            </div>
+                            <div class="event-action">
+                                <button class="join-btn">Join</button>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="date-day">22</span>
+                                <span class="date-month">Jun</span>
+                            </div>
+                            <div class="event-content">
+                                <h4>Indigenous Knowledge Sharing Circle</h4>
+                                <p class="event-meta">
+                                    <span class="event-time">⏰ 3:00 PM - 5:00 PM</span>
+                                    <span class="event-location">📍 Virtual + In-person</span>
+                                </p>
+                            </div>
+                            <div class="event-action">
+                                <button class="join-btn">Join</button>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="date-day">30</span>
+                                <span class="date-month">Jun</span>
+                            </div>
+                            <div class="event-content">
+                                <h4>Community Project Showcase</h4>
+                                <p class="event-meta">
+                                    <span class="event-time">⏰ 10:00 AM - 1:00 PM</span>
+                                    <span class="event-location">📍 Town Hall</span>
+                                </p>
+                            </div>
+                            <div class="event-action">
+                                <button class="join-btn">Join</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Portfolio Section -->
         <section id="portfolio" class="portfolio-section">
             <div class="container">
-                <h2 class="section-title">Portfolio Analysis & Impact Tracking</h2>
+                <div class="section-header-center">
+                    <span class="section-label cyan-label">Growth Documentation</span>
+                    <h2 class="section-title navy-text">Portfolio & Impact Tracking</h2>
+                </div>
                 
                 <div class="portfolio-showcase">
-                    <div class="portfolio-tabs">
-                        <button class="portfolio-tab active" data-tab="projects">Projects</button>
-                        <button class="portfolio-tab" data-tab="skills">Skills Growth</button>
-                        <button class="portfolio-tab" data-tab="impact">Community Impact</button>
-                        <button class="portfolio-tab" data-tab="reflections">Learning Reflections</button>
+                    <div class="portfolio-tabs-wrapper">
+                        <div class="portfolio-tabs">
+                            <button class="portfolio-tab active" data-tab="projects">
+                                <span class="tab-icon">🚀</span>
+                                <span>Projects</span>
+                            </button>
+                            <button class="portfolio-tab" data-tab="skills">
+                                <span class="tab-icon">📈</span>
+                                <span>Skills Growth</span>
+                            </button>
+                            <button class="portfolio-tab" data-tab="impact">
+                                <span class="tab-icon">🌟</span>
+                                <span>Community Impact</span>
+                            </button>
+                            <button class="portfolio-tab" data-tab="reflections">
+                                <span class="tab-icon">💭</span>
+                                <span>Reflections</span>
+                            </button>
+                        </div>
                     </div>
                     
                     <div class="portfolio-content">
-                        <!-- Projects Tab -->
                         <div class="tab-content active" id="projects-tab">
                             <div class="project-gallery">
-                                <div class="project-card">
+                                <div class="project-card modern-card">
                                     <div class="project-image">
-                                        <div class="image-placeholder">🌱</div>
+                                        <div class="image-placeholder gradient-bg-1">🌱</div>
+                                        <div class="project-badge">Featured</div>
                                     </div>
                                     <div class="project-info">
+                                        <div class="project-category">Biomimicry • Engineering</div>
                                         <h4>Biomimetic Solar Compost Accelerator</h4>
                                         <p class="project-description">
-                                            Designed a solar-powered compost system using termite mound ventilation principles
+                                            Designed a solar-powered compost system inspired by termite mound ventilation principles,
+                                            demonstrating nature-inspired engineering solutions for waste management.
                                         </p>
-                                        <p class="project-stats">
-                                            <span>340% faster decomposition</span>
-                                            <span>23 kg/week waste reduction</span>
-                                        </p>
+                                        <div class="project-stats">
+                                            <div class="stat-item">
+                                                <span class="stat-icon">📊</span>
+                                                <span class="stat-value">340%</span>
+                                                <span class="stat-label">Faster decomposition</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-icon">♻️</span>
+                                                <span class="stat-value">23kg</span>
+                                                <span class="stat-label">Weekly waste reduction</span>
+                                            </div>
+                                        </div>
                                         <div class="project-skills">
-                                            <span class="skill-tag">Biomimicry</span>
-                                            <span class="skill-tag">Engineering</span>
-                                            <span class="skill-tag">Data Science</span>
+                                            <span class="skill-tag cyan">Biomimicry</span>
+                                            <span class="skill-tag purple">Engineering</span>
+                                            <span class="skill-tag blue">Data Science</span>
+                                            <span class="skill-tag green">Sustainability</span>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <div class="project-card">
+                                <div class="project-card modern-card">
                                     <div class="project-image">
-                                        <div class="image-placeholder">💧</div>
+                                        <div class="image-placeholder gradient-bg-2">💧</div>
                                     </div>
                                     <div class="project-info">
-                                        <h4>Water Conservation System</h4>
+                                        <div class="project-category">Environmental Science</div>
+                                        <h4>Community Water Conservation System</h4>
                                         <p class="project-description">
-                                            Household water tracking and conservation implementation
+                                            Implemented household water tracking and conservation strategies across multiple homes,
+                                            creating a replicable model for sustainable water management in communities.
                                         </p>
-                                        <p class="project-stats">
-                                            <span>12% water reduction</span>
-                                            <span>6 households replicated</span>
-                                        </p>
-                                        <div class="project-skills">
-                                            <span class="skill-tag">Data Analysis</span>
-                                            <span class="skill-tag">Environmental Science</span>
-                                            <span class="skill-tag">Community Engagement</span>
+                                        <div class="project-stats">
+                                            <div class="stat-item">
+                                                <span class="stat-icon">💧</span>
+                                                <span class="stat-value">12%</span>
+                                                <span class="stat-label">Water reduction</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-icon">🏘️</span>
+                                                <span class="stat-value">6</span>
+                                                <span class="stat-label">Households replicated</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="project-card">
-                                    <div class="project-image">
-                                        <div class="image-placeholder">🎨</div>
-                                    </div>
-                                    <div class="project-info">
-                                        <h4>Indigenous Art Revival Project</h4>
-                                        <p class="project-description">
-                                            Documenting and preserving traditional art forms through digital media
-                                        </p>
-                                        <p class="project-stats">
-                                            <span>15 art forms documented</span>
-                                            <span>3 community workshops</span>
-                                        </p>
                                         <div class="project-skills">
-                                            <span class="skill-tag">Cultural Preservation</span>
-                                            <span class="skill-tag">Digital Media</span>
-                                            <span class="skill-tag">Community Outreach</span>
+                                            <span class="skill-tag cyan">Data Analysis</span>
+                                            <span class="skill-tag green">Environmental Science</span>
+                                            <span class="skill-tag orange">Community Engagement</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="portfolio-actions">
-                        <button class="btn-primary" onclick="generatePortfolioPDF()">Download Portfolio PDF</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tutorial Section -->
+        <!-- Community Section -->
+        <section id="community" class="community-section">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-label cosmic-label">Growing Together</span>
+                    <h2 class="section-title navy-text">Our Global Community</h2>
+                    <p class="section-subtitle">
+                        Building a worldwide network of conscious learners and change-makers
+                    </p>
+                </div>
+                
+                <div class="community-stats-grid">
+                    <div class="community-stat-card">
+                        <div class="stat-icon-large">👨‍🎓</div>
+                        <div class="stat-number cosmic-gradient" data-target="1200">0</div>
+                        <div class="stat-label">Active Learners</div>
+                        <div class="stat-trend">
+                            <span class="trend-up">↗ +15% this month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="community-stat-card">
+                        <div class="stat-icon-large">🏫</div>
+                        <div class="stat-number cosmic-gradient" data-target="85">0</div>
+                        <div class="stat-label">Learning Pods</div>
+                        <div class="stat-trend">
+                            <span class="trend-up">↗ +8 new pods</span>
+                        </div>
+                    </div>
+                    
+                    <div class="community-stat-card">
+                        <div class="stat-icon-large">🌍</div>
+                        <div class="stat-number cosmic-gradient" data-target="12">0</div>
+                        <div class="stat-label">Countries</div>
+                        <div class="stat-trend">
+                            <span class="trend-up">↗ Expanding globally</span>
+                        </div>
+                    </div>
+                    
+                    <div class="community-stat-card">
+                        <div class="stat-icon-large">🚀</div>
+                        <div class="stat-number cosmic-gradient" data-target="45">0</div>
+                        <div class="stat-label">Community Projects</div>
+                        <div class="stat-trend">
+                            <span class="trend-up">↗ +12 this quarter</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="involvement-section-inner">
+                    <h3 class="subsection-title">Get Involved with UIENC 2.0</h3>
+                    
+                    <div class="involvement-grid">
+                        <div class="involvement-card modern-card">
+                            <div class="involvement-icon-wrapper">
+                                <div class="involvement-icon">👨‍🏫</div>
+                            </div>
+                            <h4>Become a Mentor</h4>
+                            <p>Share your expertise and guide young learners on their transformative journey</p>
+                            <div class="involvement-benefits">
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Join our mentor network</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Access mentor resources</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Participate in training</span>
+                                </div>
+                            </div>
+                            <button class="involvement-btn" onclick="window.location.href='https://forms.gle/YOUR_MENTOR_FORM_ID'">
+                                <span>Apply as Mentor</span>
+                                <span class="btn-arrow">→</span>
+                            </button>
+                        </div>
+                        
+                        <div class="involvement-card modern-card">
+                            <div class="involvement-icon-wrapper">
+                                <div class="involvement-icon">🏫</div>
+                            </div>
+                            <h4>Start a Learning Pod</h4>
+                            <p>Establish a UIENC learning community in your area or region</p>
+                            <div class="involvement-benefits">
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Pod setup guide</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Community resources</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Network support</span>
+                                </div>
+                            </div>
+                            <button class="involvement-btn" onclick="window.location.href='https://forms.gle/YOUR_POD_FORM_ID'">
+                                <span>Start a Pod</span>
+                                <span class="btn-arrow">→</span>
+                            </button>
+                        </div>
+                        
+                        <div class="involvement-card modern-card">
+                            <div class="involvement-icon-wrapper">
+                                <div class="involvement-icon">🤲</div>
+                            </div>
+                            <h4>Community Partner</h4>
+                            <p>Organizations and communities can partner with UIENC for systemic change</p>
+                            <div class="involvement-benefits">
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Custom implementation</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Training programs</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Resource sharing</span>
+                                </div>
+                            </div>
+                            <button class="involvement-btn" onclick="window.location.href='https://forms.gle/YOUR_PARTNER_FORM_ID'">
+                                <span>Partner with Us</span>
+                                <span class="btn-arrow">→</span>
+                            </button>
+                        </div>
+                        
+                        <div class="involvement-card modern-card">
+                            <div class="involvement-icon-wrapper">
+                                <div class="involvement-icon">💻</div>
+                            </div>
+                            <h4>Tech Volunteer</h4>
+                            <p>Help improve the platform and add new features for global impact</p>
+                            <div class="involvement-benefits">
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Open source contribution</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Tech skill development</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">✓</span>
+                                    <span>Community recognition</span>
+                                </div>
+                            </div>
+                            <button class="involvement-btn" onclick="window.location.href='https://forms.gle/YOUR_TECH_FORM_ID'">
+                                <span>Join Tech Team</span>
+                                <span class="btn-arrow">→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial/How to Use Section -->
         <section id="how-to-use" class="tutorial-section">
             <div class="container">
-                <h2 class="section-title">Getting Started with UIENC 2.0</h2>
+                <div class="section-header-center">
+                    <span class="section-label violet-label">Getting Started</span>
+                    <h2 class="section-title navy-text">Your Journey Begins Here</h2>
+                    <p class="section-subtitle">
+                        Five simple steps to transform your learning experience
+                    </p>
+                </div>
                 
-                <div class="tutorial-steps">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
+                <div class="tutorial-timeline">
+                    <div class="step-card modern-step">
+                        <div class="step-number">
+                            <span>1</span>
+                        </div>
                         <div class="step-content">
+                            <div class="step-icon">📝</div>
                             <h3>Create Your Account</h3>
-                            <p>Sign up using Google, DigiLocker, or email registration</p>
-                            <div class="step-visual">
-                                <div class="visual-placeholder">📝</div>
+                            <p>Sign up using Google, DigiLocker, or email registration. Your data is secure and encrypted.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Google OAuth</span>
+                                <span class="feature-tag">DigiLocker</span>
+                                <span class="feature-tag">Email</span>
                             </div>
                         </div>
+                        <div class="step-connector"></div>
                     </div>
                     
-                    <div class="step-card">
-                        <div class="step-number">2</div>
+                    <div class="step-card modern-step">
+                        <div class="step-number">
+                            <span>2</span>
+                        </div>
                         <div class="step-content">
+                            <div class="step-icon">👤</div>
                             <h3>Set Up Your Profile</h3>
-                            <p>Complete your learning profile with interests, strengths, and goals</p>
-                            <div class="step-visual">
-                                <div class="visual-placeholder">👤</div>
+                            <p>Complete your learning profile with interests, strengths, goals, and learning preferences.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Interests</span>
+                                <span class="feature-tag">Goals</span>
+                                <span class="feature-tag">Preferences</span>
                             </div>
                         </div>
+                        <div class="step-connector"></div>
                     </div>
                     
-                    <div class="step-card">
-                        <div class="step-number">3</div>
+                    <div class="step-card modern-step">
+                        <div class="step-number">
+                            <span>3</span>
+                        </div>
                         <div class="step-content">
+                            <div class="step-icon">👥</div>
                             <h3>Join a Learning Pod</h3>
-                            <p>Connect with mentors and peers in your community or interest area</p>
-                            <div class="step-visual">
-                                <div class="visual-placeholder">👥</div>
+                            <p>Connect with mentors and peers in your community or interest area for collaborative growth.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Mentors</span>
+                                <span class="feature-tag">Peers</span>
+                                <span class="feature-tag">Community</span>
                             </div>
                         </div>
+                        <div class="step-connector"></div>
                     </div>
                     
-                    <div class="step-card">
-                        <div class="step-number">4</div>
+                    <div class="step-card modern-step">
+                        <div class="step-number">
+                            <span>4</span>
+                        </div>
                         <div class="step-content">
+                            <div class="step-icon">📊</div>
                             <h3>Document Your Journey</h3>
-                            <p>Start adding projects, reflections, and evidence of your learning</p>
-                            <div class="step-visual">
-                                <div class="visual-placeholder">📊</div>
+                            <p>Start adding projects, reflections, and evidence of your learning across multiple dimensions.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Projects</span>
+                                <span class="feature-tag">Reflections</span>
+                                <span class="feature-tag">Evidence</span>
                             </div>
                         </div>
+                        <div class="step-connector"></div>
                     </div>
                     
-                    <div class="step-card">
-                        <div class="step-number">5</div>
+                    <div class="step-card modern-step">
+                        <div class="step-number">
+                            <span>5</span>
+                        </div>
                         <div class="step-content">
+                            <div class="step-icon">🏅</div>
                             <h3>Earn Soulbound Badges</h3>
-                            <p>Receive verifiable credentials for your achievements and growth</p>
-                            <div class="step-visual">
-                                <div class="visual-placeholder">🏅</div>
+                            <p>Receive blockchain-verified credentials for your achievements, growth, and contributions.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Blockchain</span>
+                                <span class="feature-tag">Verifiable</span>
+                                <span class="feature-tag">Permanent</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="tutorial-resources">
+                <div class="tutorial-resources-card">
                     <h3>Additional Resources</h3>
-                    <div class="resource-links">
+                    <div class="resource-grid">
                         <a href="/user-guide" class="resource-link">
                             <span class="resource-icon">📖</span>
-                            Complete User Guide
+                            <div class="resource-content">
+                                <h4>Complete User Guide</h4>
+                                <p>Comprehensive documentation</p>
+                            </div>
                         </a>
                         <a href="/video-tutorials" class="resource-link">
                             <span class="resource-icon">🎥</span>
-                            Video Tutorials
+                            <div class="resource-content">
+                                <h4>Video Tutorials</h4>
+                                <p>Step-by-step visual guides</p>
+                            </div>
                         </a>
                         <a href="/faq" class="resource-link">
                             <span class="resource-icon">❓</span>
-                            Frequently Asked Questions
+                            <div class="resource-content">
+                                <h4>FAQ</h4>
+                                <p>Frequently asked questions</p>
+                            </div>
+                        </a>
+                        <a href="/support" class="resource-link">
+                            <span class="resource-icon">💬</span>
+                            <div class="resource-content">
+                                <h4>Support</h4>
+                                <p>Get help from our team</p>
+                            </div>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Get Involved Section -->
-        <section id="get-involved" class="involvement-section">
+        <!-- Call to Action Section -->
+        <section class="cta-section cosmic-gradient-bg">
             <div class="container">
-                <h2 class="section-title">Get Involved with UIENC 2.0</h2>
-                
-                <div class="involvement-options">
-                    <div class="involvement-card">
-                        <div class="involvement-icon">👨‍🏫</div>
-                        <h3>Become a Mentor</h3>
-                        <p>Share your expertise and guide young learners in their journey</p>
-                        <ul class="involvement-benefits">
-                            <li>Join our mentor network</li>
-                            <li>Access mentor resources</li>
-                            <li>Participate in training</li>
-                        </ul>
-                        <button class="involvement-btn" onclick="scrollToSection('registration')">Apply as Mentor</button>
-                    </div>
-                    
-                    <div class="involvement-card">
-                        <div class="involvement-icon">🏫</div>
-                        <h3>Start a Learning Pod</h3>
-                        <p>Establish a UIENC learning community in your area</p>
-                        <ul class="involvement-benefits">
-                            <li>Pod setup guide</li>
-                            <li>Community resources</li>
-                            <li>Network support</li>
-                        </ul>
-                        <button class="involvement-btn">Start a Pod</button>
-                    </div>
-                    
-                    <div class="involvement-card">
-                        <div class="involvement-icon">🤲</div>
-                        <h3>Community Partner</h3>
-                        <p>Organizations and communities can partner with UIENC</p>
-                        <ul class="involvement-benefits">
-                            <li>Custom implementation</li>
-                            <li>Training programs</li>
-                            <li>Resource sharing</li>
-                        </ul>
-                        <button class="involvement-btn">Partner with Us</button>
-                    </div>
-                    
-                    <div class="involvement-card">
-                        <div class="involvement-icon">💻</div>
-                        <h3>Tech Volunteer</h3>
-                        <p>Help improve the platform and add new features</p>
-                        <ul class="involvement-benefits">
-                            <li>Open source contribution</li>
-                            <li>Tech skill development</li>
-                            <li>Community recognition</li>
-                        </ul>
-                        <button class="involvement-btn">Join Tech Team</button>
-                    </div>
-                </div>
-                
-                <div class="community-stats">
-                    <h3>Our Growing Community</h3>
-                    <div class="stats-grid">
-                        <div class="community-stat">
-                            <span class="stat-number">1,200+</span>
-                            <span class="stat-label">Active Learners</span>
-                        </div>
-                        <div class="community-stat">
-                            <span class="stat-number">85+</span>
-                            <span class="stat-label">Learning Pods</span>
-                        </div>
-                        <div class="community-stat">
-                            <span class="stat-number">12</span>
-                            <span class="stat-label">Countries</span>
-                        </div>
-                        <div class="community-stat">
-                            <span class="stat-number">45+</span>
-                            <span class="stat-label">Community Projects</span>
-                        </div>
+                <div class="cta-content">
+                    <h2>Ready to Transform Education?</h2>
+                    <p>Join thousands of learners, mentors, and communities building Civilization 3.0</p>
+                    <div class="cta-buttons">
+                        <button class="cta-primary-large" onclick="scrollToSection('registration')">
+                            <span>Start Your Journey Today</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                        <button class="cta-secondary-large" onclick="openAuthModal()">
+                            <span>Sign In to Continue</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -772,62 +1003,96 @@
     </main>
 
     <!-- Footer Section -->
-    <footer id="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
+    <footer id="main-footer" class="main-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
                     <div class="footer-logo">
-                        <h3>UIENC 2.0</h3>
-                        <p>Enhanced Markless Growth Report Card</p>
+                        <span class="logo-icon">🌍</span>
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">UIENC 2.0</span>
+                            <span class="logo-tagline">Education 5.0</span>
+                        </div>
                     </div>
                     <p class="footer-description">
-                        Holistic Learning Documentation System for the 21st Century
+                        Holistic Learning Documentation System for Civilization 3.0—
+                        where science, humanity, and unity converge.
                     </p>
+                    <div class="footer-vision">
+                        <p class="vision-text">"One Earth. One Species. One Ethic."</p>
+                    </div>
                     <div class="social-links">
-                        <a href="#" class="social-link">Facebook</a>
-                        <a href="#" class="social-link">Twitter</a>
-                        <a href="#" class="social-link">LinkedIn</a>
-                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" aria-label="Facebook" class="social-link">
+                            <span>📘</span>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="social-link">
+                            <span>🐦</span>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">
+                            <span>💼</span>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <span>📷</span>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="social-link">
+                            <span>📺</span>
+                        </a>
                     </div>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-col">
                     <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#dashboard">Dashboard</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                    </ul>
+                    <a href="#vision">Vision</a>
+                    <a href="#about">About UIENC</a>
+                    <a href="#pillars">Three Pillars</a>
+                    <a href="#how-to-use">How to Use</a>
+                    <a href="/mission">Mission</a>
+                    <a href="/team">Team</a>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <a href="#registration">Register</a>
+                    <a href="#dashboard">Dashboard</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#community">Get Involved</a>
+                    <a href="/learning-pods">Learning Pods</a>
+                    <a href="/events">Events</a>
+                </div>
+                
+                <div class="footer-col">
                     <h4>Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="/user-guide">User Guide</a></li>
-                        <li><a href="/video-tutorials">Video Tutorials</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                        <li><a href="/research">Research Papers</a></li>
-                        <li><a href="/case-studies">Case Studies</a></li>
-                    </ul>
+                    <a href="/user-guide">User Guide</a>
+                    <a href="/video-tutorials">Tutorials</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/research">Research</a>
+                    <a href="/downloads">Downloads</a>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Contact Us</h4>
-                    <div class="contact-info">
-                        <p>Email: info@uienc.org</p>
-                        <p>Phone: +1 (555) 123-4567</p>
-                        <p>Address: 123 Learning Street, Education City</p>
-                    </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/support">Help Center</a>
+                    <a href="/feedback">Feedback</a>
+                    <a href="/report">Report Issue</a>
+                    <a href="/donate">Donate</a>
+                    <a href="/partner">Partner</a>
                 </div>
             </div>
             
+            <div class="footer-divider"></div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2023 UIENC 2.0. All rights reserved.</p>
-                <div class="footer-legal">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 UIENC 2.0. All rights reserved.</p>
+                    <p class="footer-credit">Founded by Shivanta Ronghang</p>
+                </div>
+                <div class="footer-bottom-right">
                     <a href="/privacy">Privacy Policy</a>
                     <a href="/terms">Terms of Service</a>
+                    <a href="/cookies">Cookie Policy</a>
+                    <a href="/accessibility">Accessibility</a>
                 </div>
             </div>
         </div>
@@ -839,39 +1104,54 @@
             <span class="close-modal" onclick="closeAuthModal()">&times;</span>
             <div class="auth-container">
                 <div class="auth-logo">
+                    <div class="auth-icon-large">🌍</div>
                     <h2>Welcome to UIENC 2.0</h2>
                     <p>Enhanced Markless Growth Documentation System</p>
+                    <p class="auth-subtitle">Join the Education 5.0 Movement</p>
                 </div>
                 
                 <div class="auth-options">
-                    <a href="https://accounts.google.com/" class="auth-btn google-auth" target="_blank">
+                    <a href="https://accounts.google.com/o/oauth2/auth" class="auth-btn google-auth">
                         <span class="auth-icon">🔗</span>
-                        Continue with Google
+                        <span>Continue with Google</span>
                     </a>
                     
-                    <a href="https://digilocker.gov.in/" class="auth-btn digilocker-auth" target="_blank">
+                    <a href="https://digilocker.gov.in/" class="auth-btn digilocker-auth">
                         <span class="auth-icon">🆔</span>
-                        Sign in with DigiLocker
+                        <span>Sign in with DigiLocker</span>
                     </a>
                     
                     <div class="auth-divider">
                         <span>or</span>
                     </div>
                     
-                    <div class="email-login">
-                        <input type="email" placeholder="Email address">
-                        <input type="password" placeholder="Password">
-                        <button class="login-btn">Sign In</button>
+                    <form class="email-login">
+                        <input type="email" placeholder="Email address" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit" class="login-btn">
+                            <span>Sign In</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
                         <a href="/forgot-password" class="forgot-password">Forgot Password?</a>
-                    </div>
+                    </form>
                     
                     <div class="signup-link">
-                        <p>New to UIENC? <a href="#" onclick="scrollToSection('registration')">Create Account</a></p>
+                        <p>New to UIENC? <a href="#registration" onclick="closeAuthModal(); scrollToSection('registration')">Create Account</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-wrapper">
+        <div class="scroll-progress"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span>↑</span>
+    </button>
 
     <!-- JavaScript Files -->
     <script src="global-script.js"></script>
