@@ -291,6 +291,23 @@ function initializeScrollProgress() {
 
 // Performance Optimization
 function initializePerformanceOptimization() {
+    // Detect mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    // Add device classes
+    if (isMobile) {
+        document.body.classList.add('is-mobile');
+    }
+    if (isTouchDevice) {
+        document.body.classList.add('is-touch');
+    }
+    
+    // Optimize animations for mobile
+    if (isMobile || isTouchDevice) {
+        optimizeForMobile();
+    }
+    
     // Lazy load images
     if ('loading' in HTMLImageElement.prototype) {
         const images = document.querySelectorAll('img[loading="lazy"]');
@@ -307,9 +324,12 @@ function initializePerformanceOptimization() {
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
                     imageObserver.unobserve(img);
                 }
             });
+        }, {
+            rootMargin: '50px'
         });
         
         lazyImages.forEach(img => imageObserver.observe(img));
@@ -317,10 +337,83 @@ function initializePerformanceOptimization() {
     
     // Preload critical resources
     preloadCriticalResources();
+    
+    // Optimize scroll performance
+    optimizeScrollPerformance();
+    
+    // Defer non-critical scripts
+    deferNonCriticalResources();
+}
+
+// Optimize for Mobile Devices
+function optimizeForMobile() {
+    // Reduce animation complexity
+    const complexAnimations = document.querySelectorAll('.shape, .particle-field, .cosmic-waves');
+    complexAnimations.forEach(el => {
+        el.style.animationDuration = '30s';
+    });
+    
+    // Disable parallax on mobile for better performance
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+    parallaxElements.forEach(el => {
+        el.removeAttribute('data-parallax');
+    });
+    
+    // Use passive event listeners for better scroll performance
+    const scrollableElements = document.querySelectorAll('[data-scroll]');
+    scrollableElements.forEach(el => {
+        el.addEventListener('scroll', handleScroll, { passive: true });
+        el.addEventListener('touchstart', handleTouch, { passive: true });
+    });
+}
+
+// Optimize Scroll Performance
+function optimizeScrollPerformance() {
+    let ticking = false;
+    let lastScrollY = window.pageYOffset;
+    
+    window.addEventListener('scroll', function() {
+        lastScrollY = window.pageYOffset;
+        
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                // Batch scroll-related operations
+                updateScrollProgress();
+                updateBackToTop();
+                ticking = false;
+            });
+            
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
+// Update Back to Top Button
+function updateBackToTop() {
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        if (window.pageYOffset > 500) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    }
+}
+
+// Update Scroll Progress
+function updateScrollProgress() {
+    const progressBar = document.querySelector('.scroll-progress');
+    if (progressBar) {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + '%';
+    }
 }
 
 // Preload Critical Resources
 function preloadCriticalResources() {
+    // Preload critical fonts
     const criticalFonts = [
         'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap',
         'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'
@@ -331,8 +424,55 @@ function preloadCriticalResources() {
         link.rel = 'preload';
         link.as = 'style';
         link.href = font;
+        link.onload = function() {
+            this.rel = 'stylesheet';
+        };
         document.head.appendChild(link);
     });
+    
+    // Preconnect to external domains
+    const domains = ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'];
+    domains.forEach(domain => {
+        const link = document.createElement('link');
+        link.rel = 'preconnect';
+        link.href = domain;
+        link.crossOrigin = 'anonymous';
+        document.head.appendChild(link);
+    });
+}
+
+// Defer Non-Critical Resources
+function deferNonCriticalResources() {
+    // Defer loading of non-critical CSS
+    const deferredStyles = document.querySelectorAll('link[rel="preload"][as="style"]');
+    deferredStyles.forEach(link => {
+        link.onload = function() {
+            this.rel = 'stylesheet';
+        };
+    });
+    
+    // Load non-critical scripts after page load
+    if (document.readyState === 'complete') {
+        loadNonCriticalScripts();
+    } else {
+        window.addEventListener('load', loadNonCriticalScripts);
+    }
+}
+
+// Load Non-Critical Scripts
+function loadNonCriticalScripts() {
+    // Add analytics or other non-critical scripts here
+    console.log('Page fully loaded - ready for non-critical scripts');
+}
+
+// Handle Scroll Events
+function handleScroll(e) {
+    // Scroll handling with passive listener
+}
+
+// Handle Touch Events
+function handleTouch(e) {
+    // Touch handling with passive listener
 }
 
 // Utility Functions
